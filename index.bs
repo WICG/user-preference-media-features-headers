@@ -4,8 +4,8 @@ Shortname: user-preference-media-features-header
 Level: 1
 Status: CG-DRAFT
 Group: WICG
-Repository: WICG/user-preference-media-features-header
-URL: http://example.com/url-this-spec-will-live-at
+Repository: tomayac/user-preference-media-features-header
+URL: https://tomayac.github.io/user-preference-media-features-header/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
 !Tests: <a href=https://github.com/w3c/web-platform-tests/tree/master/user-preference-media-features-header>web-platform-tests user-preference-media-features-header/</a> (<a href=https://github.com/w3c/web-platform-tests/labels/user-preference-media-features-header>ongoing work</a>)
 Abstract: A short description of your spec, one or two sentences.
