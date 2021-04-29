@@ -3,130 +3,63 @@
 This is the repository for User Preference Media Features Client Hints Header. You're welcome to
 [contribute](CONTRIBUTING.md)!
 
-To fill this out, please see: https://github.com/w3ctag/w3ctag.github.io/blob/master/explainers.md
 ## Authors:
 
-- [Author 1]
-- [Author 2]
-- [etc.]
+- [Thomas Steiner](https://github.com/tomayac)
 
 ## Participate
-- [Issue tracker]
-- [Discussion forum]
-
-## Table of Contents [if the explainer is longer than one printed page]
-
-[You can generate a Table of Contents for markdown documents using a tool like [doctoc](https://github.com/thlorenz/doctoc).]
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+- [Issue tracker](https://github.com/tomayac/user-preference-media-features-header/issues)
 
 ## Introduction
 
-[The "executive summary" or "abstract".
-Explain in a few sentences what the goals of the project are,
-and a brief overview of how the solution works.
-This should be no more than 1-2 paragraphs.]
+CSS media queries, and specifically [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) like `prefers-color-scheme`, have a potentially significant impact¹ on the amount of CSS that needs to be delivered by a page.
 
-## Goals [or Motivating Use Cases, or Scenarios]
+Focusing on `prefers-color-scheme`—but highlighting that the reasoning in this issue applies to other user preference media features as well—it is a [best practice](https://web.dev/prefers-color-scheme/#loading-strategy) to *not* load CSS for the particular non-matching color scheme in the critical rendering path, and instead to initially only load the currently relevant CSS. One way of doing so is via `<link media>`.
 
-[What is the **end-user need** which this project aims to address?]
+However, high-traffic sites like [Google Search](https://www.google.com/) that wish to honor user preference media features like `prefers-color-scheme` and that inline CSS for performance reasons need to know about the preferred color scheme (or other user preference media features respectively) ideally at request time, so that the initial HTML payload already has the right CSS inlined.
 
-## Non-goals
+## Potential Solutions
 
-[If there are "adjacent" goals which may appear to be in scope but aren't,
-enumerate them here. This section may be fleshed out as your design progresses and you encounter necessary technical and other trade-offs.]
+### Client Hint
 
-## [API 1]
+[HTTP Client Hints](https://httpwg.org/http-extensions/client-hints.html) defines an `Accept-CH` response header that servers can use to advertise their use of request headers for proactive content negotiation, colloquially referred to as "client hints" ([demo](https://client-hints-demo.appspot.com/), try it in a current version of Chrome). One such potential client hint that could help with the above scenario might be a tentatively titled `Media-Feature` hint, which would notify the server about, for example, the currently preferred color scheme.
 
-[For each related element of the proposed solution - be it an additional JS method, a new object, a new element, a new concept etc., create a section which briefly describes it.]
+* Meta note 1:
+This is somewhat of the inverse of what is being proposed in https://github.com/w3c/csswg-drafts/issues/2370, where the `Save-Data` header is suggested to be exposed through a `prefers-reduced-data` media query.
 
-```js
-// Provide example code - not IDL - demonstrating the design of the feature.
+* Meta note 2:
+[HTTP Client Hints](https://httpwg.org/http-extensions/client-hints.html) as of draft [07](https://httpwg.org/http-extensions/client-hints.html#since-07) no longer includes the concretely supported client hints as it was still the case with [06](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints-06#section-3), which is why I decided to file this here in the [csswg-drafts](https://github.com/w3c/csswg-drafts) repo.
 
-// If this API can be used on its own to address a user need,
-// link it back to one of the scenarios in the goals section.
+* Meta note 3:
+The [`Accept-CH-Lifetime`](https://tools.ietf.org/html/draft-ietf-httpbis-client-hints-06#section-2.2.2) header field was likewise [removed in draft 07](https://httpwg.org/http-extensions/client-hints.html#since-07). This header would have enabled delivery of client hints on subsequent requests to the server's origin (and not just sub-resources).
 
-// If you need to show how to get the feature set up
-// (initialized, or using permissions, etc.), include that too.
+### New HTTP Header
+
+Given the changes in *Meta note 3*, an alternative approach could be to introduce a whole new `Media-Feature` header (obviously likewise only a tentative name) rather (than a client hint), similar as what has happened with [`Save-Data`](https://wicg.github.io/netinfo/#save-data-request-header-field), which [up until draft 06](https://httpwg.org/http-extensions/client-hints.html#since-06) was a client hint before being promoted to the [Network Information API](https://wicg.github.io/netinfo/).
+
+### Proposed Syntax
+
+The header in both cases (*Client Hint* or *New HTTP Header*) could look something like in the example below, with the concrete user preference media features as a comma-separated list:
+
+```
+Media-Feature: prefers-color-scheme=dark, prefers-reduced-motion=reduce
 ```
 
-[Where necessary, provide links to longer explanations of the relevant pre-existing concepts and API.
-If there is no suitable external documentation, you might like to provide supplementary information as an appendix in this document, and provide an internal link where appropriate.]
+## Privacy Considerations
 
-[If this is already specced, link to the relevant section of the spec.]
+The [fingerprinting discussions](https://github.com/httpwg/http-extensions/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Aclient-hints+fingerprinting) in [Client Hints](https://github.com/httpwg/http-extensions#client-hints) likewise apply.
 
-[If spec work is in progress, link to the PR or draft of the spec.]
+## References
 
-## [API 2]
+- [Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme)
 
-[etc.]
-
-## Key scenarios
-
-[If there are a suite of interacting APIs, show how they work together to solve the key scenarios described.]
-
-### Scenario 1
-
-[Description of the end-user scenario]
-
-```js
-// Sample code demonstrating how to use these APIs to address that scenario.
-```
-
-### Scenario 2
-
-[etc.]
-
-## Detailed design discussion
-
-### [Tricky design choice #1]
-
-[Talk through the tradeoffs in coming to the specific design point you want to make.]
-
-```js
-// Illustrated with example code.
-```
-
-[This may be an open question,
-in which case you should link to any active discussion threads.]
-
-### [Tricky design choice 2]
-
-[etc.]
-
-## Considered alternatives
-
-[This should include as many alternatives as you can,
-from high level architectural decisions down to alternative naming choices.]
-
-### [Alternative 1]
-
-[Describe an alternative which was considered,
-and why you decided against it.]
-
-### [Alternative 2]
-
-[etc.]
-
-## Stakeholder Feedback / Opposition
-
-[Implementors and other stakeholders may already have publicly stated positions on this work. If you can, list them here with links to evidence as appropriate.]
-
-- [Implementor A] : Positive
-- [Stakeholder B] : No signals
-- [Implementor C] : Negative
-
-[If appropriate, explain the reasons given by other implementors for their concerns.]
-
-## References & acknowledgements
-
-[Your design will change and be informed by many people; acknowledge them in an ongoing way! It helps build community and, as we only get by through the contributions of many, is only fair.]
-
-[Unless you have a specific reason not to, these should be in alphabetical order.]
+## Acknowledgements
 
 Many thanks for valuable feedback and advice from:
 
-- [Person 1]
-- [Person 2]
-- [etc.]
+- [Yoav Weiss](https://github.com/yoavweiss)
+
+## Footnotes
+
+——
+¹ *"Implementing Dark Mode took over 1,000 lines of CSS"*—https://webkit.org/blog/8892/dark-mode-in-web-inspector/
