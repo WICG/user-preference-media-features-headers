@@ -7,10 +7,9 @@ Group: WICG
 Repository: tomayac/user-preference-media-features-header
 URL: https://tomayac.github.io/user-preference-media-features-header/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
-Abstract: A short description of your spec, one or two sentences.
+Abstract: HTTP Client Hints defines an Accept-CH response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called User-Pref-Media-Features, which notifies the server about user preferences that meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
 </pre>
 
 Introduction {#intro}
 =====================
 
-See https://github.com/tabatkins/bikeshed to get started.
