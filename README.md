@@ -94,35 +94,29 @@ The CSS equivalent of the information conveyed in the above header would be
 ## Example
 
 1. The client makes an initial request as follows.
-
-```bash
-GET / HTTP/1.1
-Host: example.com
-```
-
+   ```bash
+   GET / HTTP/1.1
+   Host: example.com
+   ```
 1. The server responds, telling the client that it accepts the
    `User-Pref-Media-Features` and the `Sec-CH-Example` Client Hints, out of
    which it considers `User-Pref-Media-Features` a Critical Client Hint that it
    also varies the response on.
-
-```bash
-HTTP/1.1 200 OK
-Content-Type: text/html
-Accept-CH: User-Pref-Media-Features, Sec-CH-Example
-Vary: User-Pref-Media-Features
-Critical-CH: User-Pref-Media-Features
-```
-
+   ```bash
+   HTTP/1.1 200 OK
+   Content-Type: text/html
+   Accept-CH: User-Pref-Media-Features, Sec-CH-Example
+   Vary: User-Pref-Media-Features
+   Critical-CH: User-Pref-Media-Features
+   ```
 1. The client then retries the request, telling the server that it has a user
    preference for dark-schemed content.
-
-```bash
-GET / HTTP/1.1
-Host: example.com
-User-Pref-Media-Features: prefers-color-scheme="dark"
-Sec-CH-Example: 1
-```
-
+   ```bash
+   GET / HTTP/1.1
+   Host: example.com
+   User-Pref-Media-Features: prefers-color-scheme="dark"
+   Sec-CH-Example: 1
+   ```
 1. The server can then tailor the response accordingly.
 
 ## Privacy and Security Considerations
