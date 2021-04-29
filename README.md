@@ -1,7 +1,7 @@
-# User Preference Media Features Client Hints Header
+# `User-Pref-Media-Features` Client Hints Header
 
-This is the repository for the User Preference Media Features Client Hints
-Header. You are welcome to [contribute](CONTRIBUTING.md)!
+This is the repository for the `User-Pref-Media-Features` Client Hints Header.
+You are welcome to [contribute](CONTRIBUTING.md)!
 
 ## Authors:
 
@@ -16,7 +16,8 @@ Header. You are welcome to [contribute](CONTRIBUTING.md)!
 CSS media queries, and specifically
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences)
 like `prefers-color-scheme` or `prefers-reduced-motion`, have a potentially
-significant impact¹ on the amount of CSS that needs to be delivered by a page.
+significant impact[¹](#footnotes) on the amount of CSS that needs to be
+delivered by a page.
 
 Focusing on `prefers-color-scheme`—but highlighting that the reasoning in this
 explainer applies to other user preference media features as well—it is a
@@ -27,9 +28,13 @@ doing so is via `<link media>`.
 
 However, high-traffic sites like [Google Search](https://www.google.com/) that
 wish to honor user preference media features like `prefers-color-scheme` and
-that inline CSS for performance reasons need to know about the preferred color
+that inline CSS for performance reasons, need to know about the preferred color
 scheme (or other user preference media features respectively) ideally at request
 time, so that the initial HTML payload already has the right CSS inlined.
+
+Additionally, and specifically for `prefers-color-scheme`, sites by all means
+want to avoid a Flash of inAccurate coloR Theme
+([FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/)).
 
 ## Proposed Solution
 
@@ -60,8 +65,8 @@ scheme.
   client hints on subsequent requests to the server's origin (and not just
   sub-resources).
 
-- Meta note 4: The proposed client hint would be a [Critical Client
-  Hint](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02.
+- Meta note 4: The proposed client hint would be a
+  [Critical Client Hint](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02).
   Critical Client Hints are Client Hints which meaningfully change the resulting
   resource. Such a resource should be fetched consistently across page loads to
   avoid jarring user-visible switches.
@@ -84,21 +89,21 @@ User-Pref-Media-Features: prefers-color-scheme="dark", prefers-reduced-motion="r
 
 The CSS equivalent of the information conveyed in the above header would be
 `@media (prefers-color-scheme: dark) {}` and
-`@media (prefers-reduced-motion: reduce)` respectively.
+`@media (prefers-reduced-motion: reduce) {}` respectively.
 
 ## Example
 
-The client makes an initial request as follows.
+1. The client makes an initial request as follows.
 
 ```bash
 GET / HTTP/1.1
 Host: example.com
 ```
 
-The server responds, telling the client that it accepts the
-`User-Pref-Media-Features` and the `Sec-CH-Example` Client Hints, out of which
-it considers `User-Pref-Media-Features` a Critical Client Hint that it also
-varies the response on.
+1. The server responds, telling the client that it accepts the
+   `User-Pref-Media-Features` and the `Sec-CH-Example` Client Hints, out of
+   which it considers `User-Pref-Media-Features` a Critical Client Hint that it
+   also varies the response on.
 
 ```bash
 HTTP/1.1 200 OK
@@ -108,8 +113,8 @@ Vary: User-Pref-Media-Features
 Critical-CH: User-Pref-Media-Features
 ```
 
-The client then retries the request, telling the server that it has a user
-preference for dark-schemed content.
+1. The client then retries the request, telling the server that it has a user
+   preference for dark-schemed content.
 
 ```bash
 GET / HTTP/1.1
@@ -118,7 +123,7 @@ User-Pref-Media-Features: prefers-color-scheme="dark"
 Sec-CH-Example: 1
 ```
 
-The server can then taylor the response accordingly.
+1. The server can then tailor the response accordingly.
 
 ## Privacy and Security Considerations
 
@@ -143,5 +148,5 @@ Many thanks for valuable feedback and advice from:
 
 ## Footnotes
 
-—— ¹ _"Implementing Dark Mode took over 1,000 lines of
-CSS"_—https://webkit.org/blog/8892/dark-mode-in-web-inspector/
+1. _"Implementing Dark Mode took over 1,000 lines of
+   CSS"_—https://webkit.org/blog/8892/dark-mode-in-web-inspector/
