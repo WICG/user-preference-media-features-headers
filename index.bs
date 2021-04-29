@@ -1,0 +1,17 @@
+<pre class='metadata'>
+Title: User Preference Media Features Client Hints Header
+Shortname: user-preference-media-features-header
+Level: 1
+Status: CG-DRAFT
+Group: WICG
+Repository: WICG/user-preference-media-features-header
+URL: http://example.com/url-this-spec-will-live-at
+Editor: Thomas Steiner, Google https://google.com, tomac@google.com
+!Tests: <a href=https://github.com/w3c/web-platform-tests/tree/master/user-preference-media-features-header>web-platform-tests user-preference-media-features-header/</a> (<a href=https://github.com/w3c/web-platform-tests/labels/user-preference-media-features-header>ongoing work</a>)
+Abstract: A short description of your spec, one or two sentences.
+</pre>
+
+Introduction {#intro}
+=====================
+
+See https://github.com/tabatkins/bikeshed to get started.
