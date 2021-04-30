@@ -16,7 +16,7 @@ Abstract: HTTP Client Hints defines an `Accept-CH` response header that servers 
     "authors": ["Ilya Grigorik", "Yoav Weiss"],
     "href": "https://datatracker.ietf.org/doc/rfc8942/",    
     "title": "HTTP Client Hints",
-    "status": "RFC - Experimental (February 2021; No errata)"
+    "status": "RFC - Experimental (February 2021; No errata)",
     "publisher": "IETF httpbis-WG",
   },
   "draft-ietf-httpbis-header-structure-19": {
