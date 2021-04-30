@@ -94,7 +94,7 @@ The CSS equivalent of the information conveyed in the above header would be
 
 ## Example
 
-1. The client makes an initial request to the server as follows.
+1. The client makes an initial request to the server.
    ```bash
    GET / HTTP/1.1
    Host: example.com
@@ -118,7 +118,7 @@ The CSS equivalent of the information conveyed in the above header would be
    User-Pref-Media-Features: prefers-color-scheme="dark"
    Sec-CH-Example: 1
    ```
-1. The server can then tailor the response for the client accordingly.
+1. The server can then tailor the response to the client's preferences accordingly.
 
 ## Privacy and Security Considerations
 
@@ -133,7 +133,7 @@ of Client Hint Reliability likewise apply to this proposal.
 - [Client Hints](https://datatracker.ietf.org/doc/html/rfc8942)
 - [Client Hint Reliability](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02)
 - [Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme)
-- [Structured Headers for HTTP](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15)
+- [Structured Headers for HTTP](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19)
 
 ## Acknowledgements
 

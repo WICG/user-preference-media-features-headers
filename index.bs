@@ -7,9 +7,129 @@ Group: WICG
 Repository: tomayac/user-preference-media-features-header
 URL: https://tomayac.github.io/user-preference-media-features-header/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
-Abstract: HTTP Client Hints defines an Accept-CH response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called User-Pref-Media-Features, which notifies the server about user preferences that meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
+Abstract: HTTP Client Hints defines an `Accept-CH` response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called `User-Pref-Media-Features`, which notifies the server about user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
+</pre>
+
+<pre class=biblio>
+{
+  "CLIENT-HINTS": {
+    "authors": ["Ilya Grigorik", "Yoav Weiss"],
+    "href": "https://datatracker.ietf.org/doc/rfc8942/",    
+    "title": "HTTP Client Hints",
+    "status": "RFC - Experimental (February 2021; No errata)"
+    "publisher": "IETF httpbis-WG",
+  },
+  "draft-ietf-httpbis-header-structure-19": {
+    "authors": ["Mark Nottingham", "Poul-Henning Kamp"],
+    "href": "https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19",
+    "title": "Structured Field Values for HTTP",
+    "status": "ID",
+    "publisher": "IETF httpbis-WG"
+  },
+  "draft-davidben-http-client-hint-reliability-02": {
+    "authors": ["David Benjamin"],
+    "href": "https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02",
+    "title": "Client Hint Reliability",
+    "status": "ID",
+    "publisher": "IETF httpbis-WG"
+  }
+  "MEDIA-QUERIES-LEVEL-5": {
+    "authors": ["Dean Jackson", "Florian Rivoal", "Tab Atkins Jr.", "Daniel Libby"],
+    "href": "https://drafts.csswg.org/mediaqueries-5/",
+    "title": "Media Queries Level 5",
+    "status": "ED",
+    "publisher": "CSS Working Group"      
+  }
+}
+</pre>
+<pre class="anchors">
+    urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; spec: draft-ietf-httpbis-header-structure-19
+    type: dfn
+        text: structured header value; url: #
+    for: structured header value
+        type: dfn
+            text: items; url: #section-3.3
+            text: dictionary; url: #section-3.2
+            text: string; url: #section-3.3.3
 </pre>
 
 Introduction {#intro}
 =====================
 
+CSS media queries, and specifically
+[user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences)
+like `prefers-color-scheme` or `prefers-reduced-motion`, have a potentially
+[significant impact](https://webkit.org/blog/8892/dark-mode-in-web-inspector/#:~:text=implementing%20dark%20mode%20took%20over%201%2C000%20lines%20of%20css.)
+on the amount of CSS that needs to be delivered by a page.
+
+High-traffic sites like search engines or news sites that
+wish to honor user preference media features like `prefers-color-scheme` and
+that inline CSS for performance reasons, need to know about the preferred color
+scheme (or other user preference media features respectively) ideally at request
+time, so that the initial HTML payload already has the right CSS inlined.
+
+Additionally, and specifically for `prefers-color-scheme`, sites by all means
+want to avoid a Flash of inAccurate coloR Theme
+([FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/)).
+
+### Usage Example ### {#example}
+
+1. The client makes an initial request to the server.
+   <pre class="highlight">
+     GET / HTTP/1.1
+     Host: example.com
+   </pre>
+1. The server responds, telling the client that it accepts the
+   `User-Pref-Media-Features` and the `Sec-CH-Example` [[!CLIENT-HINTS]], out of
+   which it considers `User-Pref-Media-Features` a Critical Client Hint that it
+   also varies the response on.
+   <pre class="highlight">
+     HTTP/1.1 200 OK
+     Content-Type: text/html
+     Accept-CH: User-Pref-Media-Features, Sec-CH-Example
+     Vary: User-Pref-Media-Features
+     Critical-CH: User-Pref-Media-Features
+   </pre>
+1. The client then retries the request, telling the server that it has a user
+   preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
+   <pre class="highlight">
+     GET / HTTP/1.1
+     Host: example.com
+     User-Pref-Media-Features: prefers-color-scheme="dark"
+     Sec-CH-Example: 1
+   </pre>
+1. The server can then tailor the response to the client's preferences accordingly.
+
+User Preference Media Features (Client Hint) Header Field {#sec-user-pref-meia-features-client-hint-header}
+=====================
+
+The User Preference Media header field is a [[CLIENT-HINTS]] header.
+It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
+the names are the names of the media features and where the values are [=items=] of type [=string=]
+that consist of the valid values for each media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+The ABNF (Augmented Backus-Naur Form) syntax for the `User-Pref-Media-Features` header field is as follows:
+
+~~~ abnf
+  User-Pref-Media-Features = dict-member *( OWS "," OWS dict-member )  
+   dict-member             = member-name [ "=" member-value ]
+   member-name             = key
+   member-value            = sf-item
+   sf-item                 = bare-item
+   bare-item               = sf-string
+~~~
+
+Security Considerations {#sec-security-considerations}
+=======================================
+The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
+The
+[Security Considerations](https://datatracker.ietf.org/doc/html/rfc8942#section-4)
+of HTTP Client Hints and the
+[Security Considerations](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02#section-5)
+of Client Hint Reliability likewise apply to this proposal.
+
+<!-- ============================================================ -->
+<h2 id=acknowledgements>Acknowledgements</h2>
+<!-- ============================================================ -->
+
+Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
+led to improvements to this specification.
