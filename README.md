@@ -9,6 +9,7 @@ You are welcome to [contribute](CONTRIBUTING.md)!
 
 ## Participate
 
+- [GitHub repository](https://github.com/tomayac/user-preference-media-features-header)
 - [Issue tracker](https://github.com/tomayac/user-preference-media-features-header/issues)
 
 ## Introduction
@@ -43,7 +44,7 @@ want to avoid a Flash of inAccurate coloR Theme
 [HTTP Client Hints](https://datatracker.ietf.org/doc/html/rfc8942) defines an
 `Accept-CH` response header that servers can use to advertise their use of
 request headers for proactive content negotiation, colloquially referred to as
-"client hints". One such potential client hint that could help with the above
+client hints. One such potential client hint that could help with the above
 scenario might be a tentatively titled `User-Pref-Media-Features` hint, which
 would notify the server about, for example, the currently preferred color
 scheme.
@@ -93,7 +94,7 @@ The CSS equivalent of the information conveyed in the above header would be
 
 ## Example
 
-1. The client makes an initial request as follows.
+1. The client makes an initial request to the server as follows.
    ```bash
    GET / HTTP/1.1
    Host: example.com
@@ -117,7 +118,7 @@ The CSS equivalent of the information conveyed in the above header would be
    User-Pref-Media-Features: prefers-color-scheme="dark"
    Sec-CH-Example: 1
    ```
-1. The server can then tailor the response accordingly.
+1. The server can then tailor the response for the client accordingly.
 
 ## Privacy and Security Considerations
 
