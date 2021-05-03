@@ -48,8 +48,8 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
         text: structured header value; url: #
     for: structured header value
         type: dfn
-            text: items; url: #section-3.3
             text: dictionary; url: #section-3.2
+            text: items; url: #section-3.3            
             text: string; url: #section-3.3.3
 </pre>
 
@@ -120,11 +120,8 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
 <h2 id="security-considerations">Security Considerations</h2>
 
 The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
-The
-<a href="https://datatracker.ietf.org/doc/html/rfc8942#section-4">Security Considerations</a>
-of HTTP Client Hints and the
-<a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02#section-5">Security Considerations</a>
-of Client Hint Reliability likewise apply to this proposal.
+Additionally, the Security Considerations of [[!CLIENT-HINTS]] and the
+Security Considerations of [[!draft-davidben-http-client-hint-reliability-02]] likewise apply to this proposal.
 
 <!-- ============================================================ -->
 <h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
