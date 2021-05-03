@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
   <link href="https://tomayac.github.io/user-preference-media-features-header/" rel="canonical">
-  <meta content="8036478c2ddc8412dda8331be52317e1a43d1829" name="document-revision">
+  <meta content="2b8d22eea01d1df106305d12a42a5c9a818ea474" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -605,8 +605,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
      </ol>
     <li><a href="#user-pref-media-features-header"><span class="secno">2</span> <span class="content">User Preference Media Features (Client Hint) Header Field</span></a>
     <li><a href="#security-considerations"><span class="secno">3</span> <span class="content">Security Considerations</span></a>
-    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">4</span> <span class="content"> <p>Special thanks to <span>Yoav Weiss</span> for his technical input and suggestions that
-led to improvements to this specification.</p> </span></a>
+    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">4</span> <span class="content">Acknowledgements</span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -645,13 +644,13 @@ Host: example.com
 </pre>
     <li data-md>
      <p>The server responds, telling the client that it accepts the <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code> <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a>, out of
-  which it considers <code>User-Pref-Media-Features</code> a Critical Client Hint that it
+  which it considers <code>User-Pref-Media-Features</code> a <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a> that it
   also varies the response on.</p>
 <pre class="highlight">HTTP/1.1 200 OK
 Content-Type: text/html
 Accept-CH: User-Pref-Media-Features, Sec-CH-Example
-Vary: User-Pref-Media-Features
 Critical-CH: User-Pref-Media-Features
+Vary: User-Pref-Media-Features        
 </pre>
     <li data-md>
      <p>The client then retries the request, telling the server that it has a user
@@ -667,7 +666,7 @@ Sec-CH-Example: 1
    <h2 class="heading settled" data-level="2" id="user-pref-media-features-header"><span class="secno">2. </span><span class="content">User Preference Media Features (Client Hint) Header Field</span><a class="self-link" href="#user-pref-media-features-header"></a></h2>
    <p>The User Preference Media header field is a <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> header.
 It is a <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#" id="termref-for-">structured header value</a> containing a <a data-link-type="dfn">dictionary</a> of name-value pairs where
-the names are the names of the media features and where the values are <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3" id="ref-for-section-3.3">items</a> of type <a data-link-type="dfn">string</a> that consist of the valid values for each media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+the names correspond to the names of the media features as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a> and where the values are <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3" id="ref-for-section-3.3">items</a> of type <a data-link-type="dfn">string</a> that consist of the valid values for each media feature, likewise as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
 The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Features</code> header field is as follows:</p>
 <pre class="language-abnf highlight">  <c- nc>User-Pref-Media-Features</c-> <c- o>=</c-> <c- nc>dict-member</c-> <c- o>*</c-><c- p>(</c-> <c- nc>OWS</c-> <c- l>","</c-> <c- nc>OWS</c-> <c- nc>dict-member</c-> <c- p>)</c->  
    <c- nc>dict-member</c->             <c- o>=</c-> <c- nc>member-name</c-> <c- p>[</c-> <c- l>"="</c-> <c- nc>member-value</c-> <c- p>]</c->
@@ -679,8 +678,9 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
    <h2 class="heading settled" data-level="3" id="security-considerations"><span class="secno">3. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.
 The <a href="https://datatracker.ietf.org/doc/html/rfc8942#section-4">Security Considerations</a> of HTTP Client Hints and the <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02#section-5">Security Considerations</a> of Client Hint Reliability likewise apply to this proposal.</p>
-   <h2 U0003C class="heading settled" data-level="4" h2 id="acknowledgements>Acknowledgements"><span class="secno">4. </span><span class="content"> <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
-led to improvements to this specification.</p> </span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
+   <h2 class="heading settled" data-level="4" id="acknowledgements>Acknowledgements"><span class="secno">4. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
+   <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
+led to improvements to this specification.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
@@ -751,6 +751,8 @@ led to improvements to this specification.</p> </span><a class="self-link" href=
   <dl>
    <dt id="biblio-client-hints">[CLIENT-HINTS]
    <dd>Ilya Grigorik; Yoav Weiss. <a href="https://datatracker.ietf.org/doc/rfc8942/">HTTP Client Hints</a>. RFC - Experimental (February 2021; No errata). URL: <a href="https://datatracker.ietf.org/doc/rfc8942/">https://datatracker.ietf.org/doc/rfc8942/</a>
+   <dt id="biblio-draft-davidben-http-client-hint-reliability-02">[DRAFT-DAVIDBEN-HTTP-CLIENT-HINT-RELIABILITY-02]
+   <dd>David Benjamin. <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02">Client Hint Reliability</a>. ID. URL: <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02">https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02</a>
    <dt id="biblio-draft-ietf-httpbis-header-structure-19">[DRAFT-IETF-HTTPBIS-HEADER-STRUCTURE-19]
    <dd>Mark Nottingham; Poul-Henning Kamp. <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19">Structured Field Values for HTTP</a>. ID. URL: <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19</a>
    <dt id="biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]
