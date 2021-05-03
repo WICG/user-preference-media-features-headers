@@ -75,29 +75,29 @@ want to avoid a Flash of inAccurate coloR Theme
 ### Usage Example ### {#example}
 
 1. The client makes an initial request to the server.
-   <pre class="highlight">
-     GET / HTTP/1.1
-     Host: example.com
-   </pre>
+      <pre class="highlight">
+        GET / HTTP/1.1
+        Host: example.com
+      </pre>
 1. The server responds, telling the client that it accepts the
    `User-Pref-Media-Features` and the `Sec-CH-Example` [[!CLIENT-HINTS]], out of
    which it considers `User-Pref-Media-Features` a Critical Client Hint that it
    also varies the response on.
-   <pre class="highlight">
-     HTTP/1.1 200 OK
-     Content-Type: text/html
-     Accept-CH: User-Pref-Media-Features, Sec-CH-Example
-     Vary: User-Pref-Media-Features
-     Critical-CH: User-Pref-Media-Features
-   </pre>
+      <pre class="highlight">
+        HTTP/1.1 200 OK
+        Content-Type: text/html
+        Accept-CH: User-Pref-Media-Features, Sec-CH-Example
+        Vary: User-Pref-Media-Features
+        Critical-CH: User-Pref-Media-Features
+      </pre>
 1. The client then retries the request, telling the server that it has a user
    preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
-   <pre class="highlight">
-     GET / HTTP/1.1
-     Host: example.com
-     User-Pref-Media-Features: prefers-color-scheme="dark"
-     Sec-CH-Example: 1
-   </pre>
+      <pre class="highlight">
+        GET / HTTP/1.1
+        Host: example.com
+        User-Pref-Media-Features: prefers-color-scheme="dark"
+        Sec-CH-Example: 1
+      </pre>
 1. The server can then tailor the response to the client's preferences accordingly.
 
 User Preference Media Features (Client Hint) Header Field {#sec-user-pref-meia-features-client-hint-header}
