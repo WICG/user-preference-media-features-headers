@@ -43,7 +43,7 @@ Abstract: HTTP Client Hints defines an `Accept-CH` response header that servers 
 }
 </pre>
 <pre class="anchors">
-    urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; spec: draft-ietf-httpbis-header-structure-19
+urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; spec: draft-ietf-httpbis-header-structure-19
     type: dfn
         text: structured header value; url: #
     for: structured header value
