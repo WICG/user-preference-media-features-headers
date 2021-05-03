@@ -80,14 +80,14 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server responds, telling the client that it accepts the
       <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code> [[!CLIENT-HINTS]], out of
-      which it considers <code>User-Pref-Media-Features</code> a Critical Client Hint that it
+      which it considers <code>User-Pref-Media-Features</code> a [[!draft-davidben-http-client-hint-reliability-02]] that it
       also varies the response on.
       <pre class="highlight">
         HTTP/1.1 200 OK
         Content-Type: text/html
         Accept-CH: User-Pref-Media-Features, Sec-CH-Example
-        Vary: User-Pref-Media-Features
         Critical-CH: User-Pref-Media-Features
+        Vary: User-Pref-Media-Features        
       </pre>
 1. The client then retries the request, telling the server that it has a user
       preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
@@ -103,8 +103,9 @@ want to avoid a Flash of inAccurate coloR Theme
 
 The User Preference Media header field is a [[CLIENT-HINTS]] header.
 It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
-the names are the names of the media features and where the values are [=items=] of type [=string=]
-that consist of the valid values for each media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+the names correspond to the names of the media features as defined in [[!MEDIA-QUERIES-LEVEL-5]]
+and where the values are [=items=] of type [=string=]
+that consist of the valid values for each media feature, likewise as defined in [[!MEDIA-QUERIES-LEVEL-5]].
 The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Features</code> header field is as follows:
 
 ~~~ abnf
@@ -126,7 +127,7 @@ of HTTP Client Hints and the
 of Client Hint Reliability likewise apply to this proposal.
 
 <!-- ============================================================ -->
-<h2 id="acknowledgements>Acknowledgements"</h2>
+<h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
 <!-- ============================================================ -->
 
 Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
