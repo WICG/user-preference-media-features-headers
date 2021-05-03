@@ -56,7 +56,7 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
 <h2 id="introduction">Introduction</h2>
 
 CSS media queries, and specifically
-[[mediaqueries-5#mf-user-preferences]]
+[[mediaqueries-5#mf-user-preferences | User Preference Media Features]]
 like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>, have a potentially
 <a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/#:~:text=implementing%20dark%20mode%20took%20over%201%2C000%20lines%20of%20css.">significant impact</a>
 on the amount of CSS that needs to be delivered by a page.
@@ -79,8 +79,10 @@ want to avoid a Flash of inAccurate coloR Theme
         Host: example.com
       </pre>
 1. The server responds, telling the client that it accepts the
-      <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code> [[!CLIENT-HINTS]], out of
-      which it considers <code>User-Pref-Media-Features</code> a [[!draft-davidben-http-client-hint-reliability-02]] that it
+      <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code>
+      [[!CLIENT-HINTS | Client Hint]], out of
+      which it considers <code>User-Pref-Media-Features</code> a
+      [[!draft-davidben-http-client-hint-reliability-02 | Critical Client Hint]] that it
       also varies the response on.
       <pre class="highlight">
         HTTP/1.1 200 OK
@@ -90,7 +92,7 @@ want to avoid a Flash of inAccurate coloR Theme
         Vary: User-Pref-Media-Features        
       </pre>
 1. The client then retries the request, telling the server that it has a user
-      preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
+      preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]].
       <pre class="highlight">
         GET / HTTP/1.1
         Host: example.com
@@ -99,13 +101,15 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server can then tailor the response to the client's preferences accordingly.
 
-<h2 id="user-pref-media-features-header">User Preference Media Features (Client Hint) Header Field</h2>
+<h2 id="user-pref-media-features-header">(Critical) Client Hint Header Field</h2>
 
-The User Preference Media header field is a [[CLIENT-HINTS]] header.
+The User Preference Media header field is a [[CLIENT-HINTS | Client Hint]] header, which is considered a
+[[!draft-davidben-http-client-hint-reliability-02 | Critical Client Hint]].
 It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
-the names correspond to the names of the media features as defined in [[!MEDIA-QUERIES-LEVEL-5]]
+the names correspond to the names of the media features as defined in
+[[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]]
 and where the values are [=items=] of type [=string=]
-that consist of the valid values for each media feature, likewise as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+that consist of the valid values for each media feature, likewise as defined in [[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]].
 The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Features</code> header field is as follows:
 
 ~~~ abnf
@@ -120,8 +124,8 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
 <h2 id="security-considerations">Security Considerations</h2>
 
 The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
-Additionally, the Security Considerations of [[!CLIENT-HINTS]] and the
-Security Considerations of [[!draft-davidben-http-client-hint-reliability-02]] likewise apply to this proposal.
+Additionally, the Security Considerations of [[!CLIENT-HINTS | Client Hints]] and the
+Security Considerations of [[!draft-davidben-http-client-hint-reliability-02 | Client Hint Reliability]] likewise apply to this proposal.
 
 <!-- ============================================================ -->
 <h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
