@@ -70,7 +70,7 @@ time, so that the initial HTML payload already has the right CSS inlined.
 
 Additionally, and specifically for `prefers-color-scheme`, sites by all means
 want to avoid a Flash of inAccurate coloR Theme
-[FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/).
+([\FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/)).
 
 ### Usage Example ### {#example}
 
