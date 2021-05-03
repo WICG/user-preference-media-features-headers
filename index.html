@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
   <link href="https://tomayac.github.io/user-preference-media-features-header/" rel="canonical">
-  <meta content="0a50919e25d0d7ada0a08d3e98d5a135e1b24ccc" name="document-revision">
+  <meta content="0789e50a81bcc41678a32af5f0ab6f6cca475508" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -581,8 +581,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>HTTP Client Hints defines an <code>Accept-CH<code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server about user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.</code></code></p>
-   <code><code> </code></code>
+   <p>HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server about user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
@@ -599,7 +598,15 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#acknowledgements"><span class="secno">1</span> <span class="content">Acknowledgements</span></a>
+    <li>
+     <a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
+     <ol class="toc">
+      <li><a href="#usage-example"><span class="secno">1.1</span> <span class="content">Usage Example</span></a>
+     </ol>
+    <li><a href="#user-pref-media-features-header"><span class="secno">2</span> <span class="content">User Preference Media Features (Client Hint) Header Field</span></a>
+    <li><a href="#security-considerations"><span class="secno">3</span> <span class="content">Security Considerations</span></a>
+    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">4</span> <span class="content"> <p>Special thanks to <span>Yoav Weiss</span> for his technical input and suggestions that
+led to improvements to this specification.</p> </span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -619,7 +626,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    </ol>
   </nav>
   <main>
-   <h3 class="heading settled" id="introduction"><span class="content">Introduction</span></h3>
+   <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
    <p>CSS media queries, and specifically <a href="https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences">Media Queries 5 §11 User Preference Media Features</a> like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>, have a potentially <a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/#:~:text=implementing%20dark%20mode%20took%20over%201%2C000%20lines%20of%20css.">significant impact</a> on the amount of CSS that needs to be delivered by a page.</p>
    <p>High-traffic sites like search engines or news sites that
 wish to honor user preference media features like <code>prefers-color-scheme</code> and
@@ -629,7 +636,7 @@ time, so that the initial HTML payload already has the right CSS inlined.</p>
    <p>Additionally, and specifically for <code>prefers-color-scheme</code>, sites by all means
 want to avoid a Flash of inAccurate coloR Theme
 (<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">FART</a>).</p>
-   <h4 class="heading settled" id="usage-example"><span class="content">Usage Example ###</span></h4>
+   <h3 class="heading settled" data-level="1.1" id="usage-example"><span class="secno">1.1. </span><span class="content">Usage Example</span><a class="self-link" href="#usage-example"></a></h3>
    <ol>
     <li data-md>
      <p>The client makes an initial request to the server.</p>
@@ -657,7 +664,7 @@ Sec-CH-Example: 1
     <li data-md>
      <p>The server can then tailor the response to the client’s preferences accordingly.</p>
    </ol>
-   <h3 class="heading settled" id="user-preference-media-features-client-hint-header-field"><span class="content">User Preference Media Features (Client Hint) Header Field</span></h3>
+   <h2 class="heading settled" data-level="2" id="user-pref-media-features-header"><span class="secno">2. </span><span class="content">User Preference Media Features (Client Hint) Header Field</span><a class="self-link" href="#user-pref-media-features-header"></a></h2>
    <p>The User Preference Media header field is a <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> header.
 It is a <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#" id="termref-for-">structured header value</a> containing a <a data-link-type="dfn">dictionary</a> of name-value pairs where
 the names are the names of the media features and where the values are <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3" id="ref-for-section-3.3">items</a> of type <a data-link-type="dfn">string</a> that consist of the valid values for each media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
@@ -669,12 +676,11 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
    <c- nc>sf-item</c->                 <c- o>=</c-> <c- nc>bare-item</c->
    <c- nc>bare-item</c->               <c- o>=</c-> <c- nc>sf-string</c->
 </pre>
-   <h3 class="heading settled" id="security-considerations"><span class="content">Security Considerations</span></h3>
+   <h2 class="heading settled" data-level="3" id="security-considerations"><span class="secno">3. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.
 The <a href="https://datatracker.ietf.org/doc/html/rfc8942#section-4">Security Considerations</a> of HTTP Client Hints and the <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02#section-5">Security Considerations</a> of Client Hint Reliability likewise apply to this proposal.</p>
-   <h2 class="heading settled" data-level="1" id="acknowledgements"><span class="secno">1. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements"></a></h2>
-   <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
-led to improvements to this specification.</p>
+   <h2 U0003C class="heading settled" data-level="4" h2 id="acknowledgements>Acknowledgements"><span class="secno">4. </span><span class="content"> <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
+led to improvements to this specification.</p> </span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
@@ -722,13 +728,13 @@ led to improvements to this specification.</p>
   <aside class="dfn-panel" data-for="term-for-section-3.3">
    <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-section-3.3">User Preference Media Features (Client Hint) Header Field</a>
+    <li><a href="#ref-for-section-3.3">2. User Preference Media Features (Client Hint) Header Field</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-">
    <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#termref-for-">User Preference Media Features (Client Hint) Header Field</a>
+    <li><a href="#termref-for-">2. User Preference Media Features (Client Hint) Header Field</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
