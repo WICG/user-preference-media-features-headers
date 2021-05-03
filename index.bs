@@ -7,7 +7,7 @@ Group: WICG
 Repository: tomayac/user-preference-media-features-header
 URL: https://tomayac.github.io/user-preference-media-features-header/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
-Abstract: HTTP Client Hints defines an <code>Accept-CH<code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server about user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
+Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server about user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
 </pre>
 
 <pre class=biblio>
@@ -53,7 +53,7 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
             text: string; url: #section-3.3.3
 </pre>
 
-## Introduction
+<h2 id="introduction">Introduction</h2>
 
 CSS media queries, and specifically
 [[mediaqueries-5#mf-user-preferences]]
@@ -71,7 +71,7 @@ Additionally, and specifically for <code>prefers-color-scheme</code>, sites by a
 want to avoid a Flash of inAccurate coloR Theme
 (<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">FART</a>).
 
-### Usage Example ###
+<h3 id="usage-example">Usage Example</h3>
 
 1. The client makes an initial request to the server.
       <pre class="highlight">
@@ -99,7 +99,7 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server can then tailor the response to the client's preferences accordingly.
 
-## User Preference Media Features (Client Hint) Header Field
+<h2 id="user-pref-media-features-header">User Preference Media Features (Client Hint) Header Field</h2>
 
 The User Preference Media header field is a [[CLIENT-HINTS]] header.
 It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
@@ -116,7 +116,7 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
    bare-item               = sf-string
 ~~~
 
-## Security Considerations
+<h2 id="security-considerations">Security Considerations</h2>
 
 The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
 The
@@ -126,7 +126,7 @@ of HTTP Client Hints and the
 of Client Hint Reliability likewise apply to this proposal.
 
 <!-- ============================================================ -->
-<h2 id=acknowledgements>Acknowledgements</h2>
+<h2 id="acknowledgements>Acknowledgements"</h2>
 <!-- ============================================================ -->
 
 Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
