@@ -53,8 +53,7 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
             text: string; url: #section-3.3.3
 </pre>
 
-Introduction {#intro}
-=====================
+## Introduction {#intro}
 
 CSS media queries, and specifically
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences)
@@ -100,8 +99,7 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server can then tailor the response to the client's preferences accordingly.
 
-User Preference Media Features (Client Hint) Header Field {#sec-user-pref-meia-features-client-hint-header}
-=====================
+## User Preference Media Features (Client Hint) Header Field {#sec-user-pref-meia-features-client-hint-header}
 
 The User Preference Media header field is a [[CLIENT-HINTS]] header.
 It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
@@ -118,8 +116,8 @@ The ABNF (Augmented Backus-Naur Form) syntax for the `User-Pref-Media-Features` 
    bare-item               = sf-string
 ~~~
 
-Security Considerations {#sec-security-considerations}
-=======================================
+## Security Considerations {#sec-security-considerations}
+
 The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
 The
 [Security Considerations](https://datatracker.ietf.org/doc/html/rfc8942#section-4)
