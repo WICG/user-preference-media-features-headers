@@ -19,16 +19,16 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
     "status": "RFC - Experimental (February 2021; No errata)",
     "publisher": "IETF httpbis-WG"
   },
-  "draft-ietf-httpbis-header-structure-19": {
+  "STRUCTURED-FIELD-VALUES-FOR-HTTP": {
     "authors": ["Mark Nottingham", "Poul-Henning Kamp"],
-    "href": "https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19",
+    "href": "https://tools.ietf.org/html/STRUCTURED-FIELD-VALUES-FOR-HTTP",
     "title": "Structured Field Values for HTTP",
     "status": "ID",
     "publisher": "IETF httpbis-WG"
   },
-  "draft-davidben-http-client-hint-reliability-02": {
+  "CLIENT-HINT-RELIABILITY": {
     "authors": ["David Benjamin"],
-    "href": "https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02",
+    "href": "https://tools.ietf.org/html/CLIENT-HINT-RELIABILITY",
     "title": "Client Hint Reliability",
     "status": "ID",
     "publisher": "IETF httpbis-WG"
@@ -43,7 +43,7 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
 }
 </pre>
 <pre class="anchors">
-urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; spec: draft-ietf-httpbis-header-structure-19
+urlPrefix: https://tools.ietf.org/html/STRUCTURED-FIELD-VALUES-FOR-HTTP; spec: STRUCTURED-FIELD-VALUES-FOR-HTTP
     type: dfn
         text: structured header value; url: #
     for: structured header value
@@ -80,7 +80,7 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server responds, telling the client that it accepts the
       <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code> [[!CLIENT-HINTS]], out of
-      which it considers <code>User-Pref-Media-Features</code> a [[!draft-davidben-http-client-hint-reliability-02]] that it
+      which it considers <code>User-Pref-Media-Features</code> a [[!CLIENT-HINT-RELIABILITY]] that it
       also varies the response on.
       <pre class="highlight">
         HTTP/1.1 200 OK
@@ -123,7 +123,7 @@ The User Preference Media Features Client Hint header will only be available to 
 The
 <a href="https://datatracker.ietf.org/doc/html/rfc8942#section-4">Security Considerations</a>
 of HTTP Client Hints and the
-<a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02#section-5">Security Considerations</a>
+<a href="https://tools.ietf.org/html/CLIENT-HINT-RELIABILITY#section-5">Security Considerations</a>
 of Client Hint Reliability likewise apply to this proposal.
 
 <!-- ============================================================ -->
