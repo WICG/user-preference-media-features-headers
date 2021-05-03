@@ -7,7 +7,7 @@ Group: WICG
 Repository: tomayac/user-preference-media-features-header
 URL: https://tomayac.github.io/user-preference-media-features-header/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
-Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This spec introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server of user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
+Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server of user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
 </pre>
 
 <pre class=biblio>
@@ -56,8 +56,9 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
 <h2 id="introduction">Introduction</h2>
 
 CSS media queries, and specifically
-[[mediaqueries-5#mf-user-preferences | User Preference Media Features]]
-like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>, have a potentially
+[[mediaqueries-5#mf-user-preferences]]
+like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>,
+have a potentially
 <a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/#:~:text=implementing%20dark%20mode%20took%20over%201%2C000%20lines%20of%20css.">significant impact</a>
 on the amount of CSS that needs to be delivered by a page.
 
@@ -80,9 +81,9 @@ want to avoid a Flash of inAccurate coloR Theme
       </pre>
 1. The server responds, telling the client that it accepts the
       <code>User-Pref-Media-Features</code> and the <code>Sec-CH-Example</code>
-      [[!CLIENT-HINTS | Client Hint]], out of
+      [[!CLIENT-HINTS]], out of
       which it considers <code>User-Pref-Media-Features</code> a
-      [[!draft-davidben-http-client-hint-reliability-02 | Critical Client Hint]] that it
+      [[!draft-davidben-http-client-hint-reliability-02]] that it
       also varies the response on.
       <pre class="highlight">
         HTTP/1.1 200 OK
@@ -92,7 +93,7 @@ want to avoid a Flash of inAccurate coloR Theme
         Vary: User-Pref-Media-Features        
       </pre>
 1. The client then retries the request, telling the server that it has a user
-      preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]].
+      preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
       <pre class="highlight">
         GET / HTTP/1.1
         Host: example.com
@@ -103,14 +104,15 @@ want to avoid a Flash of inAccurate coloR Theme
 
 <h2 id="user-pref-media-features-header">(Critical) Client Hint Header Field</h2>
 
-The User Preference Media header field is a [[CLIENT-HINTS | Client Hint]] header, which is considered a
-[[!draft-davidben-http-client-hint-reliability-02 | Critical Client Hint]].
-It is a [=structured header value=] containing a [=dictionary=] of name-value pairs where
-the names correspond to the names of the media features as defined in
-[[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]]
+The User Preference Media header field is a [[CLIENT-HINTS]] header, which is
+considered a [[!draft-davidben-http-client-hint-reliability-02]].
+It is a [=structured header value=] containing a [=dictionary=] of name-value
+pairs where the names correspond to the names of the media features as defined in
+[[!MEDIA-QUERIES-LEVEL-5]]
 and where the values are [=items=] of type [=string=]
-that consist of the valid values for each media feature, likewise as defined in [[!MEDIA-QUERIES-LEVEL-5 | Media Queries Level 5]].
-The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Features</code> header field is as follows:
+that consist of the valid values for each media feature, likewise as defined in
+[[!MEDIA-QUERIES-LEVEL-5]]. The ABNF (Augmented Backus-Naur Form) syntax for the
+<code>User-Pref-Media-Features</code> header field is as follows:
 
 ~~~ abnf
   User-Pref-Media-Features = dict-member *( OWS "," OWS dict-member )  
@@ -123,13 +125,14 @@ The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Featu
 
 <h2 id="security-considerations">Security Considerations</h2>
 
-The User Preference Media Features Client Hint header will only be available to HTTPS secure contexts.  
-Additionally, the Security Considerations of [[!CLIENT-HINTS | Client Hints]] and the
-Security Considerations of [[!draft-davidben-http-client-hint-reliability-02 | Client Hint Reliability]] likewise apply to this proposal.
+The User Preference Media Features Client Hint header will only be available to
+HTTPS secure contexts. Additionally, the Security Considerations of [[!CLIENT-HINTS]]
+and the Security Considerations of [[!draft-davidben-http-client-hint-reliability-02]]
+likewise apply to this proposal.
 
 <!-- ============================================================ -->
 <h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
 <!-- ============================================================ -->
 
-Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his technical input and suggestions that
-led to improvements to this specification.
+Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his
+technical input and suggestions that led to improvements to this specification.
