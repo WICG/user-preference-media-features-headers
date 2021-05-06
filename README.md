@@ -87,38 +87,14 @@ The list of the client hints is modeled after the
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) in
 Media Queries Level 5.
 
-- `Sec-CH-Prefers-Reduced-Motion` (corresponds to
-  [`prefers-reduced-motion`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion)) with
-  the allowed values
-  [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-no-preference)
-  and
-  [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-reduce).
-- `Sec-CH-Prefers-Reduced-Transparency` (corresponds to
-  [`prefers-reduced-transparency`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency)
-  with the allowed values
-  [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-no-preference)
-  and
-  [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-reduce).
-- `Sec-CH-Prefers-Contrast` (corresponds to
-  [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast)) with the allowed
-  values
-  [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-no-preference),
-  [`less`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-less), and
-  [`more`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-more).
-- `Sec-CH-Forced-Colors` (corresponds to
-  [`forced-colors`](https://drafts.csswg.org/mediaqueries-5/#forced-colors)) with the allowed values
-  [`active`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-active) and
-  [`none`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-none)
-- `Sec-CH-Prefers-Color-Scheme` (corresponds to
-  [`prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)) with the
-  allowed values
-  [`light`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light) and
-  [`dark`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark)
-- `Sec-CH-Prefers-Reduced-Data` (corresponds to
-  [`prefers-reduced-data`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data)) with the
-  allowed values
-  [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-no-preference)
-  and [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-reduce).
+| Client Hint                           | Allowed Values                                                                                                                                                                                                                                                                        | Corresponding User Preference Media Feature                                                             |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `Sec-CH-Prefers-Reduced-Motion`       | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-reduce)                                                                        | [`prefers-reduced-motion`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion)             |
+| `Sec-CH-Prefers-Reduced-Transparency` | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-reduce)                                                            | [`prefers-reduced-transparency`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency) | [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast) |
+| `Sec-CH-Prefers-Contrast`             | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-no-preference), [`less`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-less), [`more`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-more) | [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast)                         |
+| `Sec-CH-Forced-Colors`                | [`active`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-active), [`none`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-none)                                                                                                            | [`forced-colors`](https://drafts.csswg.org/mediaqueries-5/#forced-colors)                               |
+| `Sec-CH-Prefers-Color-Scheme`         | [`light`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light), [`dark`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark)                                                                                                | [`prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)                 |
+| `Sec-CH-Prefers-Reduced-Data`         | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-reduce)                                                                            | [`prefers-reduced-data`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data)                 |
 
 > Meta note: Since [`Save-Data`](https://wicg.github.io/savedata/#save-data-request-header-field) is
 > prior art, should `Sec-CH-Prefers-Reduced-Data` be defined for consistency?
