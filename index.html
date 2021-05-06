@@ -1,12 +1,12 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>User Preference Media Features Client Hints Header</title>
+  <title>User Preference Media Features Client Hints Headers</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
-  <link href="https://tomayac.github.io/user-preference-media-features-header/" rel="canonical">
-  <meta content="d4730c5a9ff102c0a46415d32941dd0414a08b9b" name="document-revision">
+  <link href="https://tomayac.github.io/user-preference-media-features-headers/" rel="canonical">
+  <meta content="74240dd5c1729fdaf658943d1bc98e5bc30c8768" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -562,20 +562,20 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
-   <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Header</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2021-05-03">3 May 2021</time></span></h2>
+   <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2021-05-06">6 May 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://tomayac.github.io/user-preference-media-features-header/">https://tomayac.github.io/user-preference-media-features-header/</a>
+     <dd><a class="u-url" href="https://tomayac.github.io/user-preference-media-features-headers/">https://tomayac.github.io/user-preference-media-features-headers/</a>
      <dt>Issue Tracking:
-     <dd><a href="https://github.com/tomayac/user-preference-media-features-header/issues/">GitHub</a>
+     <dd><a href="https://github.com/tomayac/user-preference-media-features-headers/issues/">GitHub</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:tomac@google.com">Thomas Steiner</a> (<a class="p-org org" href="https://google.com">Google</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 the Contributors to the User Preference Media Features Client Hints Header Specification, published by the <a href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>.
+   <p class="copyright" data-fill-with="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2021 the Contributors to the User Preference Media Features Client Hints Headers Specification, published by the <a href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> under the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>.
 A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available. </p>
    <hr title="Separator for header">
   </div>
@@ -651,7 +651,7 @@ Host: example.com
 Content-Type: text/html
 Accept-CH: User-Pref-Media-Features, Sec-CH-Example
 Critical-CH: User-Pref-Media-Features
-Vary: User-Pref-Media-Features        
+Vary: User-Pref-Media-Features
 </pre>
     <li data-md>
      <p>The client then retries the request, telling the server that it has a user
@@ -669,7 +669,7 @@ Sec-CH-Example: 1
 considered a <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a>.
 It is a <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#" id="termref-for-">structured header value</a> containing a <a data-link-type="dfn">dictionary</a> of name-value
 pairs where the names correspond to the names of the media features as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a> and where the values are <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3" id="ref-for-section-3.3">items</a> of type <a data-link-type="dfn">string</a> that consist of the valid values for each media feature, likewise as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>. The ABNF (Augmented Backus-Naur Form) syntax for the <code>User-Pref-Media-Features</code> header field is as follows:</p>
-<pre class="language-abnf highlight">  <c- nc>User-Pref-Media-Features</c-> <c- o>=</c-> <c- nc>dict-member</c-> <c- o>*</c-><c- p>(</c-> <c- nc>OWS</c-> <c- l>","</c-> <c- nc>OWS</c-> <c- nc>dict-member</c-> <c- p>)</c->  
+<pre class="language-abnf highlight">  <c- nc>User-Pref-Media-Features</c-> <c- o>=</c-> <c- nc>dict-member</c-> <c- o>*</c-><c- p>(</c-> <c- nc>OWS</c-> <c- l>","</c-> <c- nc>OWS</c-> <c- nc>dict-member</c-> <c- p>)</c->
    <c- nc>dict-member</c->             <c- o>=</c-> <c- nc>member-name</c-> <c- p>[</c-> <c- l>"="</c-> <c- nc>member-value</c-> <c- p>]</c->
    <c- nc>member-name</c->             <c- o>=</c-> <c- nc>key</c->
    <c- nc>member-value</c->            <c- o>=</c-> <c- nc>sf-item</c->
