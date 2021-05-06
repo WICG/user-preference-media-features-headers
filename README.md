@@ -2,8 +2,10 @@
 
 This is the repository for a set of
 [HTTP Client Hints](https://datatracker.ietf.org/doc/html/rfc8942) headers around
-[user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences). You
-are welcome to [contribute](CONTRIBUTING.md)!
+[user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) as
+defined by
+[Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme).
+You are welcome to [contribute](CONTRIBUTING.md)!
 
 ## Authors:
 
