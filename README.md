@@ -119,14 +119,15 @@ The list of the client hints is modeled after the
    Vary: Sec-CH-Prefers-Color-Scheme
    Critical-CH: Sec-CH-Prefers-Color-Scheme
    ```
-1. The client then retries the request, telling the server that it has a user preference for
-   dark-schemed content.
+1. The client then retries the request, telling the server via `Sec-CH-Prefers-Color-Scheme` that it
+   has a user preference for dark-schemed content.
    ```bash
    GET / HTTP/1.1
    Host: example.com
    Sec-CH-Prefers-Color-Scheme: "dark"
    ```
-1. The server can then tailor the response to the client's preferences accordingly.
+1. The server can then tailor the response to the client's preferences accordingly and, for example,
+   inline the CSS responsible for the dark theme into the response body.
 
 ## Privacy and Security Considerations
 
