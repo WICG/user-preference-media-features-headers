@@ -52,12 +52,12 @@ preferred color scheme as per `prefers-color-scheme` is reported via the aptly n
 
 > Meta note: This is somewhat of the inverse of what was proposed in
 > [w3c/csswg-drafts#2370](https://github.com/w3c/csswg-drafts/issues/2370), where the `Save-Data`
->  header was suggested to be exposed through a `prefers-reduced-data` user preference media
+>  client hint was suggested to be exposed through a `prefers-reduced-data` user preference media
 > feature.
 
 ### Critical Client Hints
 
-It is the expectation of the author that the proposed client hints would most commonly be used as
+It is the expectation of the author that the proposed client hints will most commonly be used as
 [Critical Client Hints](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02).
 Critical Client Hints are Client Hints which meaningfully change the resulting resource. Such a
 resource should be fetched consistently across page loads (including the initial page load) to avoid
@@ -66,12 +66,12 @@ jarring user-visible switches.
 ### Proposed Syntax
 
 User preference media features consist of a name (like `prefers-reduced-motion`) and allowed values
-(like `no-preference` or `reduce`. Each header field is represented as
+(like `no-preference` or `reduce`. Each client hint header field is represented as
 [Structured Headers for HTTP](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15)
 object containing an
 [item](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15#section-3.3) whose value
 is a [string](https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-15#section-3.3.3). For
-example, to convey that the user prefers a dark theme and reduced motion, the header would look like
+example, to convey that the user prefers a dark theme and reduced motion, the client hints look like
 in the example below.
 
 ```
@@ -79,7 +79,7 @@ Sec-CH-Prefers-Color-Scheme: "dark"
 Sec-CH-Prefers-Reduced-Motion: "reduce"
 ```
 
-The CSS equivalent of the information conveyed in the above header would be
+The CSS equivalent of the information conveyed in the above client hints is
 `@media (prefers-color-scheme: dark) {}` and `@media (prefers-reduced-motion: reduce) {}`
 respectively.
 
