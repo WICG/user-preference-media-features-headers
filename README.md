@@ -13,8 +13,8 @@ You are welcome to [contribute](CONTRIBUTING.md)!
 
 ## Participate
 
-- [GitHub repository](https://github.com/tomayac/user-preference-media-features-header)
-- [Issue tracker](https://github.com/tomayac/user-preference-media-features-header/issues)
+- [GitHub repository](https://github.com/tomayac/user-preference-media-features-headers)
+- [Issue tracker](https://github.com/tomayac/user-preference-media-features-headers/issues)
 
 ## Introduction
 
@@ -51,8 +51,8 @@ preferred color scheme as per `prefers-color-scheme` is reported via the
 `Sec-CH-Prefers-Color-Scheme` client hint.
 
 > Meta note: This is somewhat of the inverse of what was proposed in
-> https://github.com/w3c/csswg-drafts/issues/2370, where the `Save-Data` header was suggested to be
-> exposed through a `prefers-reduced-data` media query.
+> [w3c/csswg-drafts#2370](https://github.com/w3c/csswg-drafts/issues/2370), where the `Save-Data`
+>  header was suggested to be exposed through a `prefers-reduced-data` media query.
 
 ### Critical Client Hints
 
