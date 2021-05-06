@@ -21,7 +21,7 @@ You are welcome to [contribute](CONTRIBUTING.md)!
 CSS media queries, and specifically
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) like
 `prefers-color-scheme` or `prefers-reduced-motion`, have a potentially significant
-impact[¹](#footnotes) on the amount of CSS that needs to be delivered by a page, or on the
+impact[¹](#footnotes) on the amount of CSS that needs to be delivered by a page, and on the
 experience the user is going to have when the page loads.
 
 Focusing on `prefers-color-scheme`—but highlighting that the reasoning in this explainer applies to
@@ -46,20 +46,22 @@ of inAccurate coloR Theme ([FART](https://css-tricks.com/flash-of-inaccurate-col
 header that servers can use to advertise their use of request headers for proactive content
 negotiation, colloquially referred to as client hints. This proposal is about a set of new client
 hints aimed at conveying user preference media features. These client hints are named after the
-corresponding user preference media feature that they report on, for example, the currently
-preferred color scheme as per `prefers-color-scheme` is reported via the
+corresponding user preference media feature that they report on. For example, the currently
+preferred color scheme as per `prefers-color-scheme` is reported via the aptly named
 `Sec-CH-Prefers-Color-Scheme` client hint.
 
 > Meta note: This is somewhat of the inverse of what was proposed in
 > [w3c/csswg-drafts#2370](https://github.com/w3c/csswg-drafts/issues/2370), where the `Save-Data`
->  header was suggested to be exposed through a `prefers-reduced-data` media query.
+>  header was suggested to be exposed through a `prefers-reduced-data` user preference media
+> feature.
 
 ### Critical Client Hints
 
 It is the expectation of the author that the proposed client hints would most commonly be used as
 [Critical Client Hints](https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02).
 Critical Client Hints are Client Hints which meaningfully change the resulting resource. Such a
-resource should be fetched consistently across page loads to avoid jarring user-visible switches.
+resource should be fetched consistently across page loads (including the initial page load) to avoid
+jarring user-visible switches.
 
 ### Proposed Syntax
 
@@ -88,9 +90,9 @@ The list of the client hints is modeled after the
 Media Queries Level 5.
 
 | Client Hint                           | Allowed Values                                                                                                                                                                                                                                                                        | Corresponding User Preference Media Feature                                                             |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `Sec-CH-Prefers-Reduced-Motion`       | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-motion-reduce)                                                                        | [`prefers-reduced-motion`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion)             |
-| `Sec-CH-Prefers-Reduced-Transparency` | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-reduce)                                                            | [`prefers-reduced-transparency`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency) | [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast) |
+| `Sec-CH-Prefers-Reduced-Transparency` | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-transparency-reduce)                                                            | [`prefers-reduced-transparency`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency) |
 | `Sec-CH-Prefers-Contrast`             | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-no-preference), [`less`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-less), [`more`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-more) | [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast)                         |
 | `Sec-CH-Forced-Colors`                | [`active`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-active), [`none`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-none)                                                                                                            | [`forced-colors`](https://drafts.csswg.org/mediaqueries-5/#forced-colors)                               |
 | `Sec-CH-Prefers-Color-Scheme`         | [`light`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light), [`dark`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark)                                                                                                | [`prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)                 |
