@@ -1,11 +1,11 @@
 <pre class='metadata'>
-Title: User Preference Media Features Client Hints Header
-Shortname: user-preference-media-features-header
+Title: User Preference Media Features Client Hints Headers
+Shortname: user-preference-media-features-headers
 Level: 1
 Status: CG-DRAFT
 Group: WICG
-Repository: tomayac/user-preference-media-features-header
-URL: https://tomayac.github.io/user-preference-media-features-header/
+Repository: tomayac/user-preference-media-features-headers
+URL: https://tomayac.github.io/user-preference-media-features-headers/
 Editor: Thomas Steiner, Google https://google.com, tomac@google.com
 Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a new Critical Client Hint header called <code>User-Pref-Media-Features</code>, which notifies the server of user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme.
 </pre>
@@ -14,7 +14,7 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
 {
   "CLIENT-HINTS": {
     "authors": ["Ilya Grigorik", "Yoav Weiss"],
-    "href": "https://datatracker.ietf.org/doc/rfc8942/",    
+    "href": "https://datatracker.ietf.org/doc/rfc8942/",
     "title": "HTTP Client Hints",
     "status": "RFC - Experimental (February 2021; No errata)",
     "publisher": "IETF httpbis-WG"
@@ -38,7 +38,7 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
     "href": "https://drafts.csswg.org/mediaqueries-5/",
     "title": "Media Queries Level 5",
     "status": "ED",
-    "publisher": "CSS Working Group"      
+    "publisher": "CSS Working Group"
   }
 }
 </pre>
@@ -49,7 +49,7 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
     for: structured header value
         type: dfn
             text: dictionary; url: #section-3.2
-            text: items; url: #section-3.3            
+            text: items; url: #section-3.3
             text: string; url: #section-3.3.3
 </pre>
 
@@ -90,7 +90,7 @@ want to avoid a Flash of inAccurate coloR Theme
         Content-Type: text/html
         Accept-CH: User-Pref-Media-Features, Sec-CH-Example
         Critical-CH: User-Pref-Media-Features
-        Vary: User-Pref-Media-Features        
+        Vary: User-Pref-Media-Features
       </pre>
 1. The client then retries the request, telling the server that it has a user
       preference for dark-schemed content according to [[!MEDIA-QUERIES-LEVEL-5]].
@@ -115,7 +115,7 @@ that consist of the valid values for each media feature, likewise as defined in
 <code>User-Pref-Media-Features</code> header field is as follows:
 
 ~~~ abnf
-  User-Pref-Media-Features = dict-member *( OWS "," OWS dict-member )  
+  User-Pref-Media-Features = dict-member *( OWS "," OWS dict-member )
    dict-member             = member-name [ "=" member-value ]
    member-name             = key
    member-value            = sf-item
