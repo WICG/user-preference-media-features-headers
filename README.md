@@ -87,7 +87,7 @@ respectively.
 
 The list of the client hints is modeled after the
 [user preference media features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) in
-Media Queries Level 5.
+[Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-color-scheme).
 
 | Client Hint                           | Allowed Values                                                                                                                                                                                                                                                                        | Corresponding User Preference Media Feature                                                             |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
