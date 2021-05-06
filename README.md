@@ -52,7 +52,7 @@ preferred color scheme as per `prefers-color-scheme` is reported via the aptly n
 
 > Meta note: This is somewhat of the inverse of what was proposed in
 > [w3c/csswg-drafts#2370](https://github.com/w3c/csswg-drafts/issues/2370), where the `Save-Data`
->  client hint was suggested to be exposed through a `prefers-reduced-data` user preference media
+> client hint was suggested to be exposed through a `prefers-reduced-data` user preference media
 > feature.
 
 ### Critical Client Hints
@@ -108,9 +108,10 @@ The list of the client hints is modeled after the
    GET / HTTP/1.1
    Host: example.com
    ```
-1. The server responds, telling the client that it accepts the `Sec-CH-Prefers-Color-Scheme` and the
-   `Sec-CH-Prefers-Contrast` Client Hints, out of which it considers `Sec-CH-Prefers-Color-Scheme` a
-   Critical Client Hint that it also varies the response on.
+1. The server responds, telling the client via `Accept-CH` that it accepts the
+   `Sec-CH-Prefers-Color-Scheme` and the `Sec-CH-Prefers-Contrast` Client Hints, out of which as per
+   `Critical-CH` it considers `Sec-CH-Prefers-Color-Scheme` a Critical Client Hint that it also
+   varies the response on as conveyed by `Vary`.
    ```bash
    HTTP/1.1 200 OK
    Content-Type: text/html
