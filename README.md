@@ -149,6 +149,7 @@ of Client Hint Reliability likewise apply to this proposal.
 Many thanks for valuable feedback and advice from:
 
 - [Yoav Weiss](https://github.com/yoavweiss)
+- [François Beaufort](https://github.com/beaufortfrancois)
 
 ## Footnotes
 
