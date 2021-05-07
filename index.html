@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
   <link href="https://tomayac.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="6d5052c9ba895c9818ae259af181f7d16a06d608" name="document-revision">
+  <meta content="53b5ffe70017b5696a85bd9ddaf7f6af5219cb28" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -526,8 +526,8 @@ time, so that the initial HTML payload already has the right CSS inlined.</p>
    <p>Additionally, and specifically for <code>prefers-color-scheme</code>, sites by all means
 want to avoid a Flash of inAccurate coloR Theme
 (<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">FART</a>).</p>
-   <p>This specification introduces a set of <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> headers around
-user preference media features as defined by <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.</p>
+   <p>This specification introduces a set of <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> headers around user preference media features
+as defined by <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.</p>
    <h3 class="heading settled" data-level="1.1" id="usage-example"><span class="secno">1.1. </span><span class="content">Usage Example</span><a class="self-link" href="#usage-example"></a></h3>
    <ol>
     <li data-md>
@@ -562,37 +562,37 @@ is represented as <a data-link-type="biblio" href="#biblio-draft-ietf-httpbis-he
 is a <a data-link-type="dfn">string</a>. The ABNF (Augmented Backus-Naur Form) for each header is given below.
 It is the expectation of the author that these client hints will commonly be used as <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a>.</p>
    <h3 class="heading settled" data-level="2.1" id="sec-ch-prefers-reduced-motion"><span class="secno">2.1. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Motion</code></span><a class="self-link" href="#sec-ch-prefers-reduced-motion"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion">Media Queries 5 §11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Motion = "no-preference" / "reduce"
 </pre>
    <h3 class="heading settled" data-level="2.2" id="sec-ch-prefers-reduced-transparency"><span class="secno">2.2. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Transparency</code></span><a class="self-link" href="#sec-ch-prefers-reduced-transparency"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency">Media Queries 5 §11.2 Detecting the desire for reduced transparency on the page: the prefers-reduced-transparency feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Transparency = "no-preference" / "reduce" / "prefers-reduced-transparency"
 </pre>
    <h3 class="heading settled" data-level="2.3" id="sec-ch-prefers-contrast"><span class="secno">2.3. </span><span class="content"><code>Sec-CH-Prefers-Contrast</code></span><a class="self-link" href="#sec-ch-prefers-contrast"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-contrast">Media Queries 5 §11.3 Detecting the desire for increased or decreased color contrast from elements on the page: the prefers-contrast feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Contrast = "no-preference" / "less" / "more"
 </pre>
    <h3 class="heading settled" data-level="2.4" id="sec-ch-forced-colors"><span class="secno">2.4. </span><span class="content"><code>Sec-CH-Forced-Colors</code></span><a class="self-link" href="#sec-ch-forced-colors"></a></h3>
-   <p>The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#forced-colors">Media Queries 5 §11.5 Detecting a forced color palette: the forced-colors feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Forced-Colors = "active" / "none" / "forced-colors"
 </pre>
    <h3 class="heading settled" data-level="2.5" id="sec-ch-prefers-color-scheme"><span class="secno">2.5. </span><span class="content"><code>Sec-CH-Prefers-Color-Scheme</code></span><a class="self-link" href="#sec-ch-prefers-color-scheme"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme">Media Queries 5 §11.4 Detecting the desire for light or dark color schemes: the prefers-color-scheme feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Color-Scheme = "light" / "dark"
 </pre>
    <h3 class="heading settled" data-level="2.6" id="sec-ch-prefers-reduced-data"><span class="secno">2.6. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Data</code></span><a class="self-link" href="#sec-ch-prefers-reduced-data"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Data</code> client hint is modeled after the <code>prefers-reduced-data</code> user preference media feature as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Data</code> client hint is modeled after the <code>prefers-reduced-data</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-data">Media Queries 5 §11.6 Detecting the desire for reduced data usage when loading a page: the prefers-reduced-data feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Data = "no-preference" / "reduce"
 </pre>
-   <p class="issue" id="issue-345795d6"><a class="self-link" href="#issue-345795d6"></a> <a data-link-type="biblio" href="#biblio-savedata">[savedata]</a> already defines a <code>Save-Data</code> clien hint header. Should the present
-spec define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?</p>
+   <p class="issue" id="issue-5b6f2536"><a class="self-link" href="#issue-5b6f2536"></a> <a data-link-type="biblio" href="#biblio-savedata">[savedata]</a> already defines a <code>Save-Data</code> clien hint header. Should the present
+spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?</p>
    <h2 class="heading settled" data-level="3" id="security-considerations"><span class="secno">3. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to
 HTTPS secure contexts. Additionally, the Security Considerations of <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> and the Security Considerations of <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a> likewise apply to this proposal.</p>
@@ -676,7 +676,7 @@ technical input and suggestions that led to improvements to this specification.<
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue"> <a data-link-type="biblio" href="#biblio-savedata">[savedata]</a> already defines a <code>Save-Data</code> clien hint header. Should the present
-spec define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?<a href="#issue-345795d6"> ↵ </a></div>
+spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?<a href="#issue-5b6f2536"> ↵ </a></div>
   </div>
 <script>/* script-dfn-panel */
 
