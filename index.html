@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version c6f50773a, updated Fri Apr 16 16:45:47 2021 -0700" name="generator">
   <link href="https://tomayac.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="817cbf91cd9e9aa5e71dfb39bcf033a90dbcba3a" name="document-revision">
+  <meta content="6d5052c9ba895c9818ae259af181f7d16a06d608" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -460,7 +460,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a set of user preference media features client hints headers, which notify the server of user preferences that will meaningfully alter the requested resource, like, for example, the currently preferred color scheme. These client hints will commonly be used as critical client hints.</p>
+   <p>HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a set of user preference media features client hints headers like <code>Sec-CH-Prefers-Color-Scheme</code>, which notify the server of user preferences that will meaningfully alter the requested resource, like, for example, through the currently preferred color scheme. These client hints will commonly also be used as critical client hints via the <code>Critical-CH</code> header.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
