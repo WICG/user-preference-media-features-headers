@@ -40,7 +40,7 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
     "status": "ED",
     "publisher": "CSS Working Group"
   },
-  "savedata: {
+  "savedata": {
     "authors" : ["Yoav Weiss", "Ilya Grigorik"],
     "href": "https://wicg.github.io/savedata/#save-data-request-header-field",
     "title": "Save Data API",
@@ -180,6 +180,9 @@ The ABNF syntax for this header header field is as follows:
 <pre class="highlight">
   Sec-CH-Prefers-Reduced-Data = "no-preference" / "reduce"
 </pre>
+
+Issue: [[!savedata]] already defines a <code>Save-Data</code> clien hint header. Should the present
+spec define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
 
 <h2 id="security-considerations">Security Considerations</h2>
 
