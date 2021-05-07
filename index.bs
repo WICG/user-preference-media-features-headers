@@ -92,9 +92,9 @@ user preference media features as defined by
       Host: example.com
     </pre>
 1. The server responds, telling the client via <code>Accept-CH</code> that it accepts the
-   <code>Sec-CH-Prefers-Color-Scheme</code> and the <code>Sec-CH-Prefers-Contrast</code> Client Hints, out of which as per
-   <code>Critical-CH</code> it considers <code>Sec-CH-Prefers-Color-Scheme</code> a Critical Client Hint that it also
-   varies the response on as conveyed by <code>Vary</code>.
+    <code>Sec-CH-Prefers-Color-Scheme</code> and the <code>Sec-CH-Prefers-Contrast</code> Client Hints, out of which as per
+    <code>Critical-CH</code> it considers <code>Sec-CH-Prefers-Color-Scheme</code> a Critical Client Hint that it also
+    varies the response on as conveyed by <code>Vary</code>.
     <pre class="highlight">
       HTTP/1.1 200 OK
       Content-Type: text/html
@@ -103,14 +103,14 @@ user preference media features as defined by
       Critical-CH: Sec-CH-Prefers-Color-Scheme
     </pre>
 1. The client then retries the request, telling the server via <code>Sec-CH-Prefers-Color-Scheme</code> that it
-   has a user preference for dark-schemed content.
+    has a user preference for dark-schemed content.
     <pre class="highlight">
       GET / HTTP/1.1
       Host: example.com
       Sec-CH-Prefers-Color-Scheme: "dark"
     </pre>
 1. The server can then tailor the response to the client's preferences accordingly and, for example,
-   inline the CSS responsible for the dark theme into the response body.
+    inline the CSS responsible for the dark theme into the response body.
 
 <h2 id="user-preference-media-features">User Preference Media Features</h2>
 
