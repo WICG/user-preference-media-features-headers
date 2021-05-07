@@ -79,10 +79,8 @@ Additionally, and specifically for <code>prefers-color-scheme</code>, sites by a
 want to avoid a Flash of inAccurate coloR Theme
 (<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">FART</a>).
 
-This specification introduces a set of
-[[!CLIENT-HINTS]] headers around
-user preference media features as defined by
-[[!MEDIA-QUERIES-LEVEL-5]].
+This specification introduces a set of [[!CLIENT-HINTS]] headers around user preference media features
+as defined by [[!MEDIA-QUERIES-LEVEL-5]].
 
 <h3 id="usage-example">Usage Example</h3>
 
@@ -124,7 +122,7 @@ It is the expectation of the author that these client hints will commonly be use
 <h3 id="sec-ch-prefers-reduced-motion"><code>Sec-CH-Prefers-Reduced-Motion</code></h3>
 
 The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#prefers-reduced-motion]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -134,7 +132,7 @@ The ABNF syntax for this header header field is as follows:
 <h3 id="sec-ch-prefers-reduced-transparency"><code>Sec-CH-Prefers-Reduced-Transparency</code></h3>
 
 The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#prefers-reduced-transparency]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -144,7 +142,7 @@ The ABNF syntax for this header header field is as follows:
 <h3 id="sec-ch-prefers-contrast"><code>Sec-CH-Prefers-Contrast</code></h3>
 
 The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#prefers-contrast]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -154,7 +152,7 @@ The ABNF syntax for this header header field is as follows:
 <h3 id="sec-ch-forced-colors"><code>Sec-CH-Forced-Colors</code></h3>
 
 The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#forced-colors]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -164,7 +162,7 @@ The ABNF syntax for this header header field is as follows:
 <h3 id="sec-ch-prefers-color-scheme"><code>Sec-CH-Prefers-Color-Scheme</code></h3>
 
 The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#prefers-color-scheme]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -174,7 +172,7 @@ The ABNF syntax for this header header field is as follows:
 <h3 id="sec-ch-prefers-reduced-data"><code>Sec-CH-Prefers-Reduced-Data</code></h3>
 
 The <code>Sec-CH-Prefers-Reduced-Data</code> client hint is modeled after the <code>prefers-reduced-data</code>
-user preference media feature as defined in [[!MEDIA-QUERIES-LEVEL-5]].
+user preference media feature as defined in [[mediaqueries-5#prefers-reduced-data]].
 The ABNF syntax for this header header field is as follows:
 
 <pre class="highlight">
@@ -182,7 +180,7 @@ The ABNF syntax for this header header field is as follows:
 </pre>
 
 Issue: [[!savedata]] already defines a <code>Save-Data</code> clien hint header. Should the present
-spec define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
+spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
 
 <h2 id="security-considerations">Security Considerations</h2>
 
