@@ -179,7 +179,7 @@ The ABNF syntax for this header header field is as follows:
   Sec-CH-Prefers-Reduced-Data = "no-preference" / "reduce"
 </pre>
 
-Issue: [[!savedata]] already defines a <code>Save-Data</code> clien hint header. Should the present
+Issue: [[!savedata]] already defines a <code>Save-Data</code> client hint header. Should the present
 spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
 
 <h2 id="security-considerations">Security Considerations</h2>
