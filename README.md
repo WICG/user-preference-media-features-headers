@@ -106,6 +106,10 @@ The list of the client hints is modeled after the
 Try the [demo](https://sec-ch-prefers-color-scheme.glitch.me/) in Chrome Canary (≥92.0.4514.0) and
 notice how the inlined CSS changes according to the user's preferred color scheme.
 
+<img width="800" alt="Sec-CH-Prefers-Color-Scheme: dark" src="https://user-images.githubusercontent.com/145676/119127196-4b572480-ba34-11eb-8419-d05d649c3d76.png">
+
+<img width="800" alt="Sec-CH-Prefers-Color-Scheme: light" src="https://user-images.githubusercontent.com/145676/119127202-4e521500-ba34-11eb-9837-537cf295223b.png">
+
 ## Example
 
 1. The client makes an initial request to the server.
