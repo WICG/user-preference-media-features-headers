@@ -101,6 +101,11 @@ The list of the client hints is modeled after the
 > Meta note: Since [`Save-Data`](https://wicg.github.io/savedata/#save-data-request-header-field) is
 > prior art, should `Sec-CH-Prefers-Reduced-Data` be defined for consistency?
 
+## Demo of `Sec-CH-Prefers-Color-Scheme`
+
+Try the [demo](https://sec-ch-prefers-color-scheme.glitch.me/) in Chrome Canary (≥92.0.4514.0) and
+notice how the inlined CSS changes according to the user's preferred color scheme.
+
 ## Example
 
 1. The client makes an initial request to the server.
