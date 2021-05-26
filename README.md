@@ -10,6 +10,7 @@ You are welcome to [contribute](CONTRIBUTING.md)!
 ## Authors:
 
 - [Thomas Steiner](https://github.com/tomayac)
+- [François Beaufort](https://github.com/beaufortfrancois)
 
 ## Participate
 
