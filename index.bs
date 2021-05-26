@@ -6,7 +6,8 @@ Status: CG-DRAFT
 Group: WICG
 Repository: tomayac/user-preference-media-features-headers
 URL: https://tomayac.github.io/user-preference-media-features-headers/
-Editor: Thomas Steiner, Google https://google.com, tomac@google.com
+Editor: Thomas Steiner, Google LLC https://google.com, tomac@google.com
+Editor: François Beaufort, Google LLC https://google.com, fbeaufort@google.com
 Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a set of user preference media features client hints headers like <code>Sec-CH-Prefers-Color-Scheme</code>, which notify the server of user preferences that will meaningfully alter the requested resource, like, for example, through the currently preferred color scheme. These client hints will commonly also be used as critical client hints via the <code>Critical-CH</code> header.
 </pre>
 
@@ -40,6 +41,13 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
     "status": "ED",
     "publisher": "CSS Working Group"
   },
+  "PERMISSIONS-POLICY": {
+    "authors": ["Ian Clelland"],
+    "href": "https://w3c.github.io/webappsec-permissions-policy/",
+    "title": "Permissions Policy",
+    "status": "ED",
+    "publisher": "W3C"
+  },
   "savedata": {
     "authors" : ["Yoav Weiss", "Ilya Grigorik"],
     "href": "https://wicg.github.io/savedata/#save-data-request-header-field",
@@ -57,6 +65,10 @@ urlPrefix: https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19; s
         type: dfn
             text: items; url: #section-3.3
             text: string; url: #section-3.3.3
+urlPrefix: https://wicg.github.io/client-hints-infrastructure/
+    type: dfn
+        text: client hints token; url: #client-hints-token
+        text: policy-controlled client hints features; url: #policy-controlled-client-hints-features
 </pre>
 
 <h2 id="introduction">Introduction</h2>
@@ -181,6 +193,29 @@ The ABNF syntax for this header header field is as follows:
 
 Issue: [[!savedata]] already defines a <code>Save-Data</code> client hint header. Should the present
 spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
+
+<h2 id="feature-registry">Feature Registry</h2>
+
+<h3 id="client-hints-token-definition">Client hints token</h3>
+
+This document extends the [=client hints token=] with the following [=byte-lowercase=] representation of one of
+  <code>Sec-CH-Prefers-Reduced-Motion</code>,
+  <code>Sec-CH-Prefers-Reduced-Transparency</code>,
+  <code>Sec-CH-Prefers-Contrast</code>,
+  <code>Sec-CH-Prefers-Forced-Colors</code>,
+  <code>Sec-CH-Prefers-Color-Scheme</code>, or
+  <code>Sec-CH-Prefers-Reduced-Data</code>.
+
+<h3 id="policy-controlled-features">Policy-controlled features</h3>
+
+This document extends the [=policy-controlled client hints features=] with the following [=policy-controlled features=]:
+
+- <code><dfn export>ch-sec-prefers-reduced-motion</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-sec-prefers-reduced-transparency</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-sec-prefers-contrast</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-sec-prefers-forced-colors</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-sec-prefers-color-scheme</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-sec-prefers-reduced-data</dfn></code> which has a [=default allowlist=] of `'self'`
 
 <h2 id="security-considerations">Security Considerations</h2>
 
