@@ -4,9 +4,9 @@
   <title>User Preference Media Features Client Hints Headers</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
-  <meta content="Bikeshed version 5c7bc9381, updated Wed May 12 18:18:08 2021 -0700" name="generator">
+  <meta content="Bikeshed version 800b43329, updated Tue May 25 14:13:32 2021 -0700" name="generator">
   <link href="https://tomayac.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="4dab89f3e6a295914392e9056110f4afc9ea77f0" name="document-revision">
+  <meta content="040c2bf51fc72ece9b49559148914bce021aab42" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -441,7 +441,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2021-05-21">21 May 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2021-05-26">26 May 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -449,8 +449,9 @@ dfn > a.self-link::before      { content: "#"; }
      <dt>Issue Tracking:
      <dd><a href="https://github.com/tomayac/user-preference-media-features-headers/issues/">GitHub</a>
      <dd><a href="#issues-index">Inline In Spec</a>
-     <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:tomac@google.com">Thomas Steiner</a> (<a class="p-org org" href="https://google.com">Google</a>)
+     <dt class="editor">Editors:
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:tomac@google.com">Thomas Steiner</a> (<a class="p-org org" href="https://google.com">Google LLC</a>)
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:fbeaufort@google.com">François Beaufort</a> (<a class="p-org org" href="https://google.com">Google LLC</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -492,8 +493,14 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
       <li><a href="#sec-ch-prefers-color-scheme"><span class="secno">2.5</span> <span class="content"><code>Sec-CH-Prefers-Color-Scheme</code></span></a>
       <li><a href="#sec-ch-prefers-reduced-data"><span class="secno">2.6</span> <span class="content"><code>Sec-CH-Prefers-Reduced-Data</code></span></a>
      </ol>
-    <li><a href="#security-considerations"><span class="secno">3</span> <span class="content">Security Considerations</span></a>
-    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">4</span> <span class="content">Acknowledgements</span></a>
+    <li>
+     <a href="#feature-registry"><span class="secno">3</span> <span class="content">Feature Registry</span></a>
+     <ol class="toc">
+      <li><a href="#client-hints-token-definition"><span class="secno">3.1</span> <span class="content">Client hints token</span></a>
+      <li><a href="#policy-controlled-features"><span class="secno">3.2</span> <span class="content">Policy-controlled features</span></a>
+     </ol>
+    <li><a href="#security-considerations"><span class="secno">4</span> <span class="content">Security Considerations</span></a>
+    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">5</span> <span class="content">Acknowledgements</span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -503,6 +510,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
       <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
     <li>
@@ -593,10 +601,29 @@ The ABNF syntax for this header header field is as follows:</p>
 </pre>
    <p class="issue" id="issue-0a2e40e3"><a class="self-link" href="#issue-0a2e40e3"></a> <a data-link-type="biblio" href="#biblio-savedata">[savedata]</a> already defines a <code>Save-Data</code> client hint header. Should the present
 spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?</p>
-   <h2 class="heading settled" data-level="3" id="security-considerations"><span class="secno">3. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
+   <h2 class="heading settled" data-level="3" id="feature-registry"><span class="secno">3. </span><span class="content">Feature Registry</span><a class="self-link" href="#feature-registry"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="client-hints-token-definition"><span class="secno">3.1. </span><span class="content">Client hints token</span><a class="self-link" href="#client-hints-token-definition"></a></h3>
+   <p>This document extends the <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#client-hints-token" id="ref-for-client-hints-token">client hints token</a> with the following <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#byte-lowercase" id="ref-for-byte-lowercase">byte-lowercase</a> representation of one of <code>Sec-CH-Prefers-Reduced-Motion</code>, <code>Sec-CH-Prefers-Reduced-Transparency</code>, <code>Sec-CH-Prefers-Contrast</code>, <code>Sec-CH-Prefers-Forced-Colors</code>, <code>Sec-CH-Prefers-Color-Scheme</code>, or <code>Sec-CH-Prefers-Reduced-Data</code>.</p>
+   <h3 class="heading settled" data-level="3.2" id="policy-controlled-features"><span class="secno">3.2. </span><span class="content">Policy-controlled features</span><a class="self-link" href="#policy-controlled-features"></a></h3>
+   <p>This document extends the <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#policy-controlled-client-hints-features" id="ref-for-policy-controlled-client-hints-features">policy-controlled client hints features</a> with the following <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature" id="ref-for-policy-controlled-feature">policy-controlled features</a>:</p>
+   <ul>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-reduced-motion">ch-sec-prefers-reduced-motion<a class="self-link" href="#ch-sec-prefers-reduced-motion"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-reduced-transparency">ch-sec-prefers-reduced-transparency<a class="self-link" href="#ch-sec-prefers-reduced-transparency"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist①">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-contrast">ch-sec-prefers-contrast<a class="self-link" href="#ch-sec-prefers-contrast"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist②">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-forced-colors">ch-sec-prefers-forced-colors<a class="self-link" href="#ch-sec-prefers-forced-colors"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-color-scheme">ch-sec-prefers-color-scheme<a class="self-link" href="#ch-sec-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+    <li data-md>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-reduced-data">ch-sec-prefers-reduced-data<a class="self-link" href="#ch-sec-prefers-reduced-data"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist⑤">default allowlist</a> of `<a class="property" data-link-type="propdesc">self</a>`</p>
+   </ul>
+   <h2 class="heading settled" data-level="4" id="security-considerations"><span class="secno">4. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to
 HTTPS secure contexts. Additionally, the Security Considerations of <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> and the Security Considerations of <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a> likewise apply to this proposal.</p>
-   <h2 class="heading settled" data-level="4" id="acknowledgements>Acknowledgements"><span class="secno">4. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
+   <h2 class="heading settled" data-level="5" id="acknowledgements>Acknowledgements"><span class="secno">5. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
    <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> and <a href="https://github.com/beaufortfrancois">François Beaufort</a> for their
 technical input and suggestions that led to improvements to this specification.</p>
   </main>
@@ -643,10 +670,37 @@ technical input and suggestions that led to improvements to this specification.<
   </div>
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#ch-sec-prefers-color-scheme">ch-sec-prefers-color-scheme</a><span>, in §3.2</span>
+   <li><a href="#ch-sec-prefers-contrast">ch-sec-prefers-contrast</a><span>, in §3.2</span>
+   <li><a href="#ch-sec-prefers-forced-colors">ch-sec-prefers-forced-colors</a><span>, in §3.2</span>
+   <li><a href="#ch-sec-prefers-reduced-data">ch-sec-prefers-reduced-data</a><span>, in §3.2</span>
+   <li><a href="#ch-sec-prefers-reduced-motion">ch-sec-prefers-reduced-motion</a><span>, in §3.2</span>
+   <li><a href="#ch-sec-prefers-reduced-transparency">ch-sec-prefers-reduced-transparency</a><span>, in §3.2</span>
+  </ul>
   <aside class="dfn-panel" data-for="term-for-section-3.3">
    <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3</a><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-section-3.3">2. User Preference Media Features</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-byte-lowercase">
+   <a href="https://infra.spec.whatwg.org/#byte-lowercase">https://infra.spec.whatwg.org/#byte-lowercase</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-byte-lowercase">3.1. Client hints token</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-default-allowlist">
+   <a href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist">https://w3c.github.io/webappsec-permissions-policy/#default-allowlist</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-default-allowlist">3.2. Policy-controlled features</a> <a href="#ref-for-default-allowlist①">(2)</a> <a href="#ref-for-default-allowlist②">(3)</a> <a href="#ref-for-default-allowlist③">(4)</a> <a href="#ref-for-default-allowlist④">(5)</a> <a href="#ref-for-default-allowlist⑤">(6)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-policy-controlled-feature">
+   <a href="https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature">https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-policy-controlled-feature">3.2. Policy-controlled features</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -655,6 +709,17 @@ technical input and suggestions that led to improvements to this specification.<
     <a data-link-type="biblio">[draft-ietf-httpbis-header-structure-19]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-section-3.3">items</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[INFRA]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-byte-lowercase">byte-lowercase</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[PERMISSIONS-POLICY]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="term-for-default-allowlist">default allowlist</span>
+     <li><span class="dfn-paneled" id="term-for-policy-controlled-feature">policy-controlled feature</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
@@ -666,8 +731,12 @@ technical input and suggestions that led to improvements to this specification.<
    <dd>David Benjamin. <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02">Client Hint Reliability</a>. ID. URL: <a href="https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02">https://tools.ietf.org/html/draft-davidben-http-client-hint-reliability-02</a>
    <dt id="biblio-draft-ietf-httpbis-header-structure-19">[DRAFT-IETF-HTTPBIS-HEADER-STRUCTURE-19]
    <dd>Mark Nottingham; Poul-Henning Kamp. <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19">Structured Field Values for HTTP</a>. ID. URL: <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19</a>
+   <dt id="biblio-infra">[INFRA]
+   <dd>Anne van Kesteren; Domenic Denicola. <a href="https://infra.spec.whatwg.org/">Infra Standard</a>. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
    <dt id="biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]
    <dd>Dean Jackson; et al. <a href="https://drafts.csswg.org/mediaqueries-5/">Media Queries Level 5</a>. ED. URL: <a href="https://drafts.csswg.org/mediaqueries-5/">https://drafts.csswg.org/mediaqueries-5/</a>
+   <dt id="biblio-permissions-policy">[PERMISSIONS-POLICY]
+   <dd>Ian Clelland. <a href="https://w3c.github.io/webappsec-permissions-policy/">Permissions Policy</a>. ED. URL: <a href="https://w3c.github.io/webappsec-permissions-policy/">https://w3c.github.io/webappsec-permissions-policy/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
    <dt id="biblio-savedata">[SAVEDATA]
