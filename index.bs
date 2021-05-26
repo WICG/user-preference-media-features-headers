@@ -88,8 +88,8 @@ scheme (or other user preference media features respectively) ideally at request
 time, so that the initial HTML payload already has the right CSS inlined.
 
 Additionally, and specifically for <code>prefers-color-scheme</code>, sites by all means
-want to avoid a Flash of inAccurate coloR Theme
-(<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">FART</a>).
+want to avoid a
+<a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">flash of inaccurate color theme</a>.
 
 This specification introduces a set of [[!CLIENT-HINTS]] headers around user preference media features
 as defined by [[!MEDIA-QUERIES-LEVEL-5]].
