@@ -36,8 +36,8 @@ preference media features like `prefers-color-scheme` and that inline CSS for pe
 need to know about the preferred color scheme (or other user preference media features respectively)
 ideally at request time, so that the initial HTML payload already has the right CSS inlined.
 
-Additionally, and specifically for `prefers-color-scheme`, sites by all means want to avoid a Flash
-of inAccurate coloR Theme ([FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/)).
+Additionally, and specifically for `prefers-color-scheme`, sites by all means want to avoid a
+[flash of inaccurate color theme](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/).
 
 ## Proposed Solution
 
