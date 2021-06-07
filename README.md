@@ -14,8 +14,8 @@ You are welcome to [contribute](CONTRIBUTING.md)!
 
 ## Participate
 
-- [GitHub repository](https://github.com/tomayac/user-preference-media-features-headers)
-- [Issue tracker](https://github.com/tomayac/user-preference-media-features-headers/issues)
+- [GitHub repository](https://github.com/wicg/user-preference-media-features-headers)
+- [Issue tracker](https://github.com/wicg/user-preference-media-features-headers/issues)
 
 ## Introduction
 
