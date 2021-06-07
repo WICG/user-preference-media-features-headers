@@ -4,8 +4,8 @@ Shortname: user-preference-media-features-headers
 Level: 1
 Status: CG-DRAFT
 Group: WICG
-Repository: tomayac/user-preference-media-features-headers
-URL: https://tomayac.github.io/user-preference-media-features-headers/
+Repository: WICG/user-preference-media-features-headers
+URL: https://wicg.github.io/user-preference-media-features-headers/
 Editor: Thomas Steiner, Google LLC https://google.com, tomac@google.com
 Editor: François Beaufort, Google LLC https://google.com, fbeaufort@google.com
 Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a set of user preference media features client hints headers like <code>Sec-CH-Prefers-Color-Scheme</code>, which notify the server of user preferences that will meaningfully alter the requested resource, like, for example, through the currently preferred color scheme. These client hints will commonly also be used as critical client hints via the <code>Critical-CH</code> header.
