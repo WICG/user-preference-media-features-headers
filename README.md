@@ -159,7 +159,7 @@ of Client Hint Reliability likewise apply to this proposal.
 Many thanks for valuable feedback and advice from:
 
 - [Yoav Weiss](https://github.com/yoavweiss)
-- [François Beaufort](https://github.com/beaufortfrancois)
+- The W3C TAG reviewers ([w3ctag/design-reviews/issues/632](https://github.com/w3ctag/design-reviews/issues/632))
 
 ## Footnotes
 
