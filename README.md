@@ -97,10 +97,6 @@ The list of the client hints is modeled after the
 | `Sec-CH-Prefers-Contrast`             | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-no-preference), [`less`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-less), [`more`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-more),  [`custom`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-contrast-custom) | [`prefers-contrast`](https://drafts.csswg.org/mediaqueries-5/#prefers-contrast)                         |
 | `Sec-CH-Forced-Colors`                | [`active`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-active), [`none`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-forced-colors-none)                                                                                                            | [`forced-colors`](https://drafts.csswg.org/mediaqueries-5/#forced-colors)                               |
 | `Sec-CH-Prefers-Color-Scheme`         | [`light`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light), [`dark`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark)                                                                                                | [`prefers-color-scheme`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)                 |
-| `Sec-CH-Prefers-Reduced-Data`         | [`no-preference`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-no-preference), [`reduce`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-reduced-data-reduce)                                                                            | [`prefers-reduced-data`](https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data)                 |
-
-> Meta note: Since [`Save-Data`](https://wicg.github.io/savedata/#save-data-request-header-field) is
-> prior art, should `Sec-CH-Prefers-Reduced-Data` be defined for consistency?
 
 ## Demo of `Sec-CH-Prefers-Color-Scheme`
 

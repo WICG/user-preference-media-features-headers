@@ -181,19 +181,6 @@ The ABNF syntax for this header header field is as follows:
   Sec-CH-Prefers-Color-Scheme = "light" / "dark"
 </pre>
 
-<h3 id="sec-ch-prefers-reduced-data"><code>Sec-CH-Prefers-Reduced-Data</code></h3>
-
-The <code>Sec-CH-Prefers-Reduced-Data</code> client hint is modeled after the <code>prefers-reduced-data</code>
-user preference media feature as defined in [[mediaqueries-5#prefers-reduced-data]].
-The ABNF syntax for this header header field is as follows:
-
-<pre class="highlight">
-  Sec-CH-Prefers-Reduced-Data = "no-preference" / "reduce"
-</pre>
-
-Issue: [[!savedata]] already defines a <code>Save-Data</code> client hint header. Should the present
-spec then define <code>Sec-CH-Prefers-Reduced-Data</code> for consistency as an alias of <code>Save-Data</code>?
-
 <h2 id="feature-registry">Feature Registry</h2>
 
 <h3 id="client-hints-token-definition">Client hints token</h3>
@@ -203,8 +190,7 @@ This document extends the [=client hints token=] with the following [=byte-lower
   <code>Sec-CH-Prefers-Reduced-Transparency</code>,
   <code>Sec-CH-Prefers-Contrast</code>,
   <code>Sec-CH-Prefers-Forced-Colors</code>,
-  <code>Sec-CH-Prefers-Color-Scheme</code>, or
-  <code>Sec-CH-Prefers-Reduced-Data</code>.
+  <code>Sec-CH-Prefers-Color-Scheme</code>.
 
 <h3 id="policy-controlled-features">Policy-controlled features</h3>
 
@@ -215,7 +201,6 @@ This document extends the [=policy-controlled client hints features=] with the f
 - <code><dfn export>ch-sec-prefers-contrast</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-sec-prefers-forced-colors</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-sec-prefers-color-scheme</dfn></code> which has a [=default allowlist=] of `'self'`
-- <code><dfn export>ch-sec-prefers-reduced-data</dfn></code> which has a [=default allowlist=] of `'self'`
 
 <h2 id="security-considerations">Security Considerations</h2>
 
