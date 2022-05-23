@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version fb1e763a4, updated Tue Mar 1 13:13:50 2022 -0800" name="generator">
   <link href="https://wicg.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="4a037009a6189d5cc0fcb7d1ed1e24013d373397" name="document-revision">
+  <meta content="7ae0ac6a3cb61dcbb0dacb2d96c517666740c5f4" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -451,7 +451,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-03-25">25 March 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-05-23">23 May 2022</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -607,15 +607,15 @@ The ABNF syntax for this header header field is as follows:</p>
    <p>This document extends the <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#policy-controlled-client-hints-features" id="ref-for-policy-controlled-client-hints-features">policy-controlled client hints features</a> with the following <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature" id="ref-for-policy-controlled-feature">policy-controlled features</a>:</p>
    <ul>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-reduced-motion">ch-sec-prefers-reduced-motion<a class="self-link" href="#ch-sec-prefers-reduced-motion"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-motion">ch-prefers-reduced-motion<a class="self-link" href="#ch-prefers-reduced-motion"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-reduced-transparency">ch-sec-prefers-reduced-transparency<a class="self-link" href="#ch-sec-prefers-reduced-transparency"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist①">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-transparency">ch-prefers-reduced-transparency<a class="self-link" href="#ch-prefers-reduced-transparency"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist①">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-contrast">ch-sec-prefers-contrast<a class="self-link" href="#ch-sec-prefers-contrast"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist②">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-contrast">ch-prefers-contrast<a class="self-link" href="#ch-prefers-contrast"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist②">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-forced-colors">ch-sec-prefers-forced-colors<a class="self-link" href="#ch-sec-prefers-forced-colors"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-forced-colors">ch-prefers-forced-colors<a class="self-link" href="#ch-prefers-forced-colors"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-sec-prefers-color-scheme">ch-sec-prefers-color-scheme<a class="self-link" href="#ch-sec-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-color-scheme">ch-prefers-color-scheme<a class="self-link" href="#ch-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
    </ul>
    <h2 class="heading settled" data-level="4" id="security-considerations"><span class="secno">4. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to
@@ -669,11 +669,11 @@ technical input and suggestions that led to improvements to this specification.<
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#ch-sec-prefers-color-scheme">ch-sec-prefers-color-scheme</a><span>, in § 3.2</span>
-   <li><a href="#ch-sec-prefers-contrast">ch-sec-prefers-contrast</a><span>, in § 3.2</span>
-   <li><a href="#ch-sec-prefers-forced-colors">ch-sec-prefers-forced-colors</a><span>, in § 3.2</span>
-   <li><a href="#ch-sec-prefers-reduced-motion">ch-sec-prefers-reduced-motion</a><span>, in § 3.2</span>
-   <li><a href="#ch-sec-prefers-reduced-transparency">ch-sec-prefers-reduced-transparency</a><span>, in § 3.2</span>
+   <li><a href="#ch-prefers-color-scheme">ch-prefers-color-scheme</a><span>, in § 3.2</span>
+   <li><a href="#ch-prefers-contrast">ch-prefers-contrast</a><span>, in § 3.2</span>
+   <li><a href="#ch-prefers-forced-colors">ch-prefers-forced-colors</a><span>, in § 3.2</span>
+   <li><a href="#ch-prefers-reduced-motion">ch-prefers-reduced-motion</a><span>, in § 3.2</span>
+   <li><a href="#ch-prefers-reduced-transparency">ch-prefers-reduced-transparency</a><span>, in § 3.2</span>
   </ul>
   <aside class="dfn-panel" data-for="term-for-section-3.3">
    <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3</a><b>Referenced in:</b>
