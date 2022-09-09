@@ -4,9 +4,9 @@
   <title>User Preference Media Features Client Hints Headers</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
-  <meta content="Bikeshed version fb1e763a4, updated Tue Mar 1 13:13:50 2022 -0800" name="generator">
+  <meta content="Bikeshed version 44af0bf3e, updated Fri Jul 29 17:05:16 2022 -0700" name="generator">
   <link href="https://wicg.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="7ae0ac6a3cb61dcbb0dacb2d96c517666740c5f4" name="document-revision">
+  <meta content="e5de0f2755659589ad36248cd19c02f78c3fe728" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -451,7 +451,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-05-23">23 May 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-09-09">9 September 2022</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -530,7 +530,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
-   <p>CSS media queries, and specifically <a href="https://www.w3.org/TR/mediaqueries-5/#mf-user-preferences"><cite>Media Queries 5</cite> § 11 User Preference Media Features</a> like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>,
+   <p>CSS media queries, and specifically <a href="https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences"><cite>Media Queries 5</cite> § 11 User Preference Media Features</a> like <code>prefers-color-scheme</code> or <code>prefers-reduced-motion</code>,
 have a potentially <a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/#:~:text=implementing%20dark%20mode%20took%20over%201%2C000%20lines%20of%20css.">significant impact</a> on the amount of CSS that needs to be delivered by a page, and on the experience
 the user is going to have when the page loads.</p>
    <p>High-traffic sites like search engines or news sites that
@@ -541,7 +541,8 @@ time, so that the initial HTML payload already has the right CSS inlined.</p>
    <p>Additionally, and specifically for <code>prefers-color-scheme</code>, sites by all means
 want to avoid a <a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">flash of inaccurate color theme</a>.</p>
    <p>This specification introduces a set of <a data-link-type="biblio" href="#biblio-client-hints">[CLIENT-HINTS]</a> headers around user preference media features
-as defined by <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>.</p>
+as defined by <a data-link-type="biblio" href="#biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]</a>, which servers can opt-in to receive via the Client Hints
+infrastructure defined in <a data-link-type="biblio" href="#biblio-rfc8942">[RFC8942]</a>.</p>
    <h3 class="heading settled" data-level="1.1" id="usage-example"><span class="secno">1.1. </span><span class="content">Usage Example</span><a class="self-link" href="#usage-example"></a></h3>
    <ol>
     <li data-md>
@@ -576,27 +577,27 @@ is represented as <a data-link-type="biblio" href="#biblio-draft-ietf-httpbis-he
 is a <a data-link-type="dfn">string</a>. The ABNF (Augmented Backus-Naur Form) for each header is given below.
 It is the expectation of the author that these client hints will commonly be used as <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a>.</p>
    <h3 class="heading settled" data-level="2.1" id="sec-ch-prefers-reduced-motion"><span class="secno">2.1. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Motion</code></span><a class="self-link" href="#sec-ch-prefers-reduced-motion"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion"><cite>Media Queries 5</cite> § 11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion"><cite>Media Queries 5</cite> § 11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Motion = "no-preference" / "reduce"
 </pre>
    <h3 class="heading settled" data-level="2.2" id="sec-ch-prefers-reduced-transparency"><span class="secno">2.2. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Transparency</code></span><a class="self-link" href="#sec-ch-prefers-reduced-transparency"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-transparency"><cite>Media Queries 5</cite> § 11.2 Detecting the desire for reduced transparency on the page: the prefers-reduced-transparency feature</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency"><cite>Media Queries 5</cite> § 11.2 Detecting the desire for reduced transparency on the page: the prefers-reduced-transparency feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Transparency = "no-preference" / "reduce"
 </pre>
    <h3 class="heading settled" data-level="2.3" id="sec-ch-prefers-contrast"><span class="secno">2.3. </span><span class="content"><code>Sec-CH-Prefers-Contrast</code></span><a class="self-link" href="#sec-ch-prefers-contrast"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-contrast"><cite>Media Queries 5</cite> § 11.3 Detecting the desire for increased or decreased color contrast from elements on the page: the prefers-contrast feature</a>.
+   <p>The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast"><cite>Media Queries 5</cite> § 11.3 Detecting the desire for increased or decreased color contrast from elements on the page: the prefers-contrast feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Contrast = "no-preference" / "less" / "more" / "custom"
 </pre>
    <h3 class="heading settled" data-level="2.4" id="sec-ch-forced-colors"><span class="secno">2.4. </span><span class="content"><code>Sec-CH-Forced-Colors</code></span><a class="self-link" href="#sec-ch-forced-colors"></a></h3>
-   <p>The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#forced-colors"><cite>Media Queries 5</cite> § 11.4 Detecting Forced Colors Mode: the forced-colors feature</a>.
+   <p>The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#forced-colors"><cite>Media Queries 5</cite> § 11.4 Detecting Forced Colors Mode: the forced-colors feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Forced-Colors = "none" / "active"
 </pre>
    <h3 class="heading settled" data-level="2.5" id="sec-ch-prefers-color-scheme"><span class="secno">2.5. </span><span class="content"><code>Sec-CH-Prefers-Color-Scheme</code></span><a class="self-link" href="#sec-ch-prefers-color-scheme"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme"><cite>Media Queries 5</cite> § 11.5 Detecting the desire for light or dark color schemes: the prefers-color-scheme feature</a>.
+   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme"><cite>Media Queries 5</cite> § 11.5 Detecting the desire for light or dark color schemes: the prefers-color-scheme feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Color-Scheme = "light" / "dark"
 </pre>
@@ -649,7 +650,7 @@ technical input and suggestions that led to improvements to this specification.<
     and are set apart from the normative text
     with <code>class="note"</code>,
     like this: </p>
-   <p class="note" role="note">Note, this is an informative note. </p>
+   <p class="note" role="note">Note, this is an informative note.</p>
    <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
    <p>Requirements phrased in the imperative as part of algorithms
     (such as "strip any leading space characters"
@@ -702,7 +703,7 @@ technical input and suggestions that led to improvements to this specification.<
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
-    <a data-link-type="biblio">[draft-ietf-httpbis-header-structure-19]</a> defines the following terms:
+    <a data-link-type="biblio">[DRAFT-IETF-HTTPBIS-HEADER-STRUCTURE-19]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-section-3.3">items</span>
     </ul>
@@ -731,10 +732,14 @@ technical input and suggestions that led to improvements to this specification.<
    <dd>Anne van Kesteren; Domenic Denicola. <a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
    <dt id="biblio-media-queries-level-5">[MEDIA-QUERIES-LEVEL-5]
    <dd>Dean Jackson; et al. <a href="https://drafts.csswg.org/mediaqueries-5/"><cite>Media Queries Level 5</cite></a>. ED. URL: <a href="https://drafts.csswg.org/mediaqueries-5/">https://drafts.csswg.org/mediaqueries-5/</a>
+   <dt id="biblio-mediaqueries-5">[MEDIAQUERIES-5]
+   <dd>Media Queries Level 5 URL: <a href="https://www.w3.org/TR/mediaqueries-5/">https://www.w3.org/TR/mediaqueries-5/</a>
    <dt id="biblio-permissions-policy">[PERMISSIONS-POLICY]
    <dd>Ian Clelland. <a href="https://w3c.github.io/webappsec-permissions-policy/"><cite>Permissions Policy</cite></a>. ED. URL: <a href="https://w3c.github.io/webappsec-permissions-policy/">https://w3c.github.io/webappsec-permissions-policy/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+   <dt id="biblio-rfc8942">[RFC8942]
+   <dd>I. Grigorik; Y. Weiss. <a href="https://www.rfc-editor.org/rfc/rfc8942"><cite>HTTP Client Hints</cite></a>. February 2021. Experimental. URL: <a href="https://www.rfc-editor.org/rfc/rfc8942">https://www.rfc-editor.org/rfc/rfc8942</a>
   </dl>
 <script>/* script-dfn-panel */
 
