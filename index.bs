@@ -92,7 +92,8 @@ want to avoid a
 <a href="https://css-tricks.com/flash-of-inaccurate-color-theme-fart/">flash of inaccurate color theme</a>.
 
 This specification introduces a set of [[!CLIENT-HINTS]] headers around user preference media features
-as defined by [[!MEDIA-QUERIES-LEVEL-5]].
+as defined by [[!MEDIA-QUERIES-LEVEL-5]], which servers can opt-into receiving via the Client Hints
+infrastructure defined in [[!RFC8942]].
 
 <h3 id="usage-example">Usage Example</h3>
 
