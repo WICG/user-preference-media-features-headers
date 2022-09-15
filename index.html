@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version 44af0bf3e, updated Fri Jul 29 17:05:16 2022 -0700" name="generator">
   <link href="https://wicg.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="e5de0f2755659589ad36248cd19c02f78c3fe728" name="document-revision">
+  <meta content="6a0c3201778534fc296846e73c4ea61a6b0a05d8" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -451,7 +451,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-09-09">9 September 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-09-15">15 September 2022</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -574,7 +574,7 @@ inline the CSS responsible for the dark theme into the response body.</p>
    <p>User preference media features consist of a name (like <code>prefers-reduced-motion</code>) and allowed values
 (like <code>no-preference</code> or <code>reduce</code>. Each client hint header field defined in the following
 is represented as <a data-link-type="biblio" href="#biblio-draft-ietf-httpbis-header-structure-19">[draft-ietf-httpbis-header-structure-19]</a> object containing an <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3" id="ref-for-section-3.3">items</a> whose value
-is a <a data-link-type="dfn">string</a>. The ABNF (Augmented Backus-Naur Form) for each header is given below.
+is a <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3.3" id="ref-for-section-3.3.3">string</a>. The ABNF (Augmented Backus-Naur Form) for each header is given below.
 It is the expectation of the author that these client hints will commonly be used as <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a>.</p>
    <h3 class="heading settled" data-level="2.1" id="sec-ch-prefers-reduced-motion"><span class="secno">2.1. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Motion</code></span><a class="self-link" href="#sec-ch-prefers-reduced-motion"></a></h3>
    <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion"><cite>Media Queries 5</cite> § 11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
@@ -608,15 +608,15 @@ The ABNF syntax for this header header field is as follows:</p>
    <p>This document extends the <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#policy-controlled-client-hints-features" id="ref-for-policy-controlled-client-hints-features">policy-controlled client hints features</a> with the following <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature" id="ref-for-policy-controlled-feature">policy-controlled features</a>:</p>
    <ul>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-motion">ch-prefers-reduced-motion<a class="self-link" href="#ch-prefers-reduced-motion"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-motion">ch-prefers-reduced-motion<a class="self-link" href="#ch-prefers-reduced-motion"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist">default allowlist</a> of <code>'self'</code></p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-transparency">ch-prefers-reduced-transparency<a class="self-link" href="#ch-prefers-reduced-transparency"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist①">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-reduced-transparency">ch-prefers-reduced-transparency<a class="self-link" href="#ch-prefers-reduced-transparency"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist①">default allowlist</a> of <code>'self'</code></p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-contrast">ch-prefers-contrast<a class="self-link" href="#ch-prefers-contrast"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist②">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-contrast">ch-prefers-contrast<a class="self-link" href="#ch-prefers-contrast"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist②">default allowlist</a> of <code>'self'</code></p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-forced-colors">ch-prefers-forced-colors<a class="self-link" href="#ch-prefers-forced-colors"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-forced-colors">ch-prefers-forced-colors<a class="self-link" href="#ch-prefers-forced-colors"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist③">default allowlist</a> of <code>'self'</code></p>
     <li data-md>
-     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-color-scheme">ch-prefers-color-scheme<a class="self-link" href="#ch-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> of `<a class="property css" data-link-type="property">self</a>`</p>
+     <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-color-scheme">ch-prefers-color-scheme<a class="self-link" href="#ch-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#default-allowlist" id="ref-for-default-allowlist④">default allowlist</a> of <code>'self'</code></p>
    </ul>
    <h2 class="heading settled" data-level="4" id="security-considerations"><span class="secno">4. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to
@@ -682,6 +682,12 @@ technical input and suggestions that led to improvements to this specification.<
     <li><a href="#ref-for-section-3.3">2. User Preference Media Features</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-section-3.3.3">
+   <a href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3.3">https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3.3</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-section-3.3.3">2. User Preference Media Features</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="term-for-byte-lowercase">
    <a href="https://infra.spec.whatwg.org/#byte-lowercase">https://infra.spec.whatwg.org/#byte-lowercase</a><b>Referenced in:</b>
    <ul>
@@ -706,6 +712,7 @@ technical input and suggestions that led to improvements to this specification.<
     <a data-link-type="biblio">[DRAFT-IETF-HTTPBIS-HEADER-STRUCTURE-19]</a> defines the following terms:
     <ul>
      <li><span class="dfn-paneled" id="term-for-section-3.3">items</span>
+     <li><span class="dfn-paneled" id="term-for-section-3.3.3">string</span>
     </ul>
    <li>
     <a data-link-type="biblio">[INFRA]</a> defines the following terms:
