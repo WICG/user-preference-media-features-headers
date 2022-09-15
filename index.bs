@@ -9,6 +9,7 @@ URL: https://wicg.github.io/user-preference-media-features-headers/
 Editor: Thomas Steiner, Google LLC https://google.com, tomac@google.com
 Editor: François Beaufort, Google LLC https://google.com, fbeaufort@google.com
 Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header that servers can use to advertise their use of request headers for proactive content negotiation. This specification introduces a set of user preference media features client hints headers like <code>Sec-CH-Prefers-Color-Scheme</code>, which notify the server of user preferences that will meaningfully alter the requested resource, like, for example, through the currently preferred color scheme. These client hints will commonly also be used as critical client hints via the <code>Critical-CH</code> header.
+Markup Shorthands: markdown yes
 </pre>
 
 <pre class=biblio>
@@ -47,13 +48,6 @@ Abstract: HTTP Client Hints defines an <code>Accept-CH</code> response header th
     "title": "Permissions Policy",
     "status": "ED",
     "publisher": "W3C"
-  },
-  "savedata": {
-    "authors" : ["Yoav Weiss", "Ilya Grigorik"],
-    "href": "https://wicg.github.io/savedata/#save-data-request-header-field",
-    "title": "Save Data API",
-    "status": "Draft Community Group Report",
-    "publisher": "Web Incubator Community Group"
   }
 }
 </pre>
@@ -128,7 +122,7 @@ infrastructure defined in [[!RFC8942]].
 User preference media features consist of a name (like <code>prefers-reduced-motion</code>) and allowed values
 (like <code>no-preference</code> or <code>reduce</code>. Each client hint header field defined in the following
 is represented as [[!draft-ietf-httpbis-header-structure-19]] object containing an [=items=] whose value
-is a [=string=]. The ABNF (Augmented Backus-Naur Form) for each header is given below.
+is a [=structured header value/string=]. The ABNF (Augmented Backus-Naur Form) for each header is given below.
 It is the expectation of the author that these client hints will commonly be used as
 [[!draft-davidben-http-client-hint-reliability-02]].
 
