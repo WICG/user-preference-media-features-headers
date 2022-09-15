@@ -69,6 +69,7 @@ urlPrefix: https://wicg.github.io/client-hints-infrastructure/
     type: dfn
         text: client hints token; url: #client-hints-token
         text: policy-controlled client hints features; url: #policy-controlled-client-hints-features
+        text: high-entropy client hint; url: #high-entropy-client-hint
 </pre>
 
 <h2 id="introduction">Introduction</h2>
@@ -134,7 +135,7 @@ It is the expectation of the author that these client hints will commonly be use
 
 <h3 id="sec-ch-prefers-reduced-motion"><code>Sec-CH-Prefers-Reduced-Motion</code></h3>
 
-The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code>
+The <code>Sec-CH-Prefers-Reduced-Motion</code> [=high-entropy client hint=] is modeled after the <code>prefers-reduced-motion</code>
 user preference media feature as defined in [[mediaqueries-5#prefers-reduced-motion]].
 The ABNF syntax for this header header field is as follows:
 
@@ -144,7 +145,7 @@ The ABNF syntax for this header header field is as follows:
 
 <h3 id="sec-ch-prefers-reduced-transparency"><code>Sec-CH-Prefers-Reduced-Transparency</code></h3>
 
-The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code>
+The <code>Sec-CH-Prefers-Reduced-Transparency</code> [=high-entropy client hint=] is modeled after the <code>prefers-reduced-transparency</code>
 user preference media feature as defined in [[mediaqueries-5#prefers-reduced-transparency]].
 The ABNF syntax for this header header field is as follows:
 
@@ -154,7 +155,7 @@ The ABNF syntax for this header header field is as follows:
 
 <h3 id="sec-ch-prefers-contrast"><code>Sec-CH-Prefers-Contrast</code></h3>
 
-The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code>
+The <code>Sec-CH-Prefers-Contrast</code> [=high-entropy client hint=] is modeled after the <code>prefers-contrast</code>
 user preference media feature as defined in [[mediaqueries-5#prefers-contrast]].
 The ABNF syntax for this header header field is as follows:
 
@@ -164,7 +165,7 @@ The ABNF syntax for this header header field is as follows:
 
 <h3 id="sec-ch-forced-colors"><code>Sec-CH-Forced-Colors</code></h3>
 
-The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code>
+The <code>Sec-CH-Forced-Colors</code> [=high-entropy client hint=] is modeled after the <code>forced-colors</code>
 user preference media feature as defined in [[mediaqueries-5#forced-colors]].
 The ABNF syntax for this header header field is as follows:
 
@@ -174,7 +175,7 @@ The ABNF syntax for this header header field is as follows:
 
 <h3 id="sec-ch-prefers-color-scheme"><code>Sec-CH-Prefers-Color-Scheme</code></h3>
 
-The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code>
+The <code>Sec-CH-Prefers-Color-Scheme</code> [=high-entropy client hint=] is modeled after the <code>prefers-color-scheme</code>
 user preference media feature as defined in [[mediaqueries-5#prefers-color-scheme]].
 The ABNF syntax for this header header field is as follows:
 
