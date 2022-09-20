@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version 44af0bf3e, updated Fri Jul 29 17:05:16 2022 -0700" name="generator">
   <link href="https://wicg.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="6a0c3201778534fc296846e73c4ea61a6b0a05d8" name="document-revision">
+  <meta content="028f85f622050bf65718e121016f568827bf17eb" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -451,7 +451,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-09-15">15 September 2022</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2022-09-20">20 September 2022</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -577,27 +577,27 @@ is represented as <a data-link-type="biblio" href="#biblio-draft-ietf-httpbis-he
 is a <a data-link-type="dfn" href="https://tools.ietf.org/html/draft-ietf-httpbis-header-structure-19#section-3.3.3" id="ref-for-section-3.3.3">string</a>. The ABNF (Augmented Backus-Naur Form) for each header is given below.
 It is the expectation of the author that these client hints will commonly be used as <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02">[draft-davidben-http-client-hint-reliability-02]</a>.</p>
    <h3 class="heading settled" data-level="2.1" id="sec-ch-prefers-reduced-motion"><span class="secno">2.1. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Motion</code></span><a class="self-link" href="#sec-ch-prefers-reduced-motion"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> client hint is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion"><cite>Media Queries 5</cite> § 11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Motion</code> <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#high-entropy-client-hint" id="ref-for-high-entropy-client-hint">high-entropy client hint</a> is modeled after the <code>prefers-reduced-motion</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion"><cite>Media Queries 5</cite> § 11.1 Detecting the desire for less motion on the page: the prefers-reduced-motion feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Motion = "no-preference" / "reduce"
 </pre>
    <h3 class="heading settled" data-level="2.2" id="sec-ch-prefers-reduced-transparency"><span class="secno">2.2. </span><span class="content"><code>Sec-CH-Prefers-Reduced-Transparency</code></span><a class="self-link" href="#sec-ch-prefers-reduced-transparency"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> client hint is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency"><cite>Media Queries 5</cite> § 11.2 Detecting the desire for reduced transparency on the page: the prefers-reduced-transparency feature</a>.
+   <p>The <code>Sec-CH-Prefers-Reduced-Transparency</code> <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#high-entropy-client-hint" id="ref-for-high-entropy-client-hint①">high-entropy client hint</a> is modeled after the <code>prefers-reduced-transparency</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency"><cite>Media Queries 5</cite> § 11.2 Detecting the desire for reduced transparency on the page: the prefers-reduced-transparency feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Reduced-Transparency = "no-preference" / "reduce"
 </pre>
    <h3 class="heading settled" data-level="2.3" id="sec-ch-prefers-contrast"><span class="secno">2.3. </span><span class="content"><code>Sec-CH-Prefers-Contrast</code></span><a class="self-link" href="#sec-ch-prefers-contrast"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Contrast</code> client hint is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast"><cite>Media Queries 5</cite> § 11.3 Detecting the desire for increased or decreased color contrast from elements on the page: the prefers-contrast feature</a>.
+   <p>The <code>Sec-CH-Prefers-Contrast</code> <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#high-entropy-client-hint" id="ref-for-high-entropy-client-hint②">high-entropy client hint</a> is modeled after the <code>prefers-contrast</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-contrast"><cite>Media Queries 5</cite> § 11.3 Detecting the desire for increased or decreased color contrast from elements on the page: the prefers-contrast feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Contrast = "no-preference" / "less" / "more" / "custom"
 </pre>
    <h3 class="heading settled" data-level="2.4" id="sec-ch-forced-colors"><span class="secno">2.4. </span><span class="content"><code>Sec-CH-Forced-Colors</code></span><a class="self-link" href="#sec-ch-forced-colors"></a></h3>
-   <p>The <code>Sec-CH-Forced-Colors</code> client hint is modeled after the <code>forced-colors</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#forced-colors"><cite>Media Queries 5</cite> § 11.4 Detecting Forced Colors Mode: the forced-colors feature</a>.
+   <p>The <code>Sec-CH-Forced-Colors</code> <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#high-entropy-client-hint" id="ref-for-high-entropy-client-hint③">high-entropy client hint</a> is modeled after the <code>forced-colors</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#forced-colors"><cite>Media Queries 5</cite> § 11.4 Detecting Forced Colors Mode: the forced-colors feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Forced-Colors = "none" / "active"
 </pre>
    <h3 class="heading settled" data-level="2.5" id="sec-ch-prefers-color-scheme"><span class="secno">2.5. </span><span class="content"><code>Sec-CH-Prefers-Color-Scheme</code></span><a class="self-link" href="#sec-ch-prefers-color-scheme"></a></h3>
-   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> client hint is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme"><cite>Media Queries 5</cite> § 11.5 Detecting the desire for light or dark color schemes: the prefers-color-scheme feature</a>.
+   <p>The <code>Sec-CH-Prefers-Color-Scheme</code> <a data-link-type="dfn" href="https://wicg.github.io/client-hints-infrastructure/#high-entropy-client-hint" id="ref-for-high-entropy-client-hint④">high-entropy client hint</a> is modeled after the <code>prefers-color-scheme</code> user preference media feature as defined in <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme"><cite>Media Queries 5</cite> § 11.5 Detecting the desire for light or dark color schemes: the prefers-color-scheme feature</a>.
 The ABNF syntax for this header header field is as follows:</p>
 <pre class="highlight">Sec-CH-Prefers-Color-Scheme = "light" / "dark"
 </pre>
