@@ -218,5 +218,6 @@ likewise apply to this proposal.
 <h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
 <!-- ============================================================ -->
 
-Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his
+Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> and
+<a href="https://github.com/miketaylr">Mike Taylor</a> for their
 technical input and suggestions that led to improvements to this specification.
