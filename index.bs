@@ -200,12 +200,12 @@ This document extends the [=policy-controlled client hints features=] with the f
 
 <h2 id="privacy-considerations">Privacy Considerations</h2>
 
- The User Preference Media Features Client Hint header exposes data at the HTTP
- request level that is otherwise attainable and/or detectable using JavaScript
- and CSS as defined in [[!MEDIA-QUERIES-LEVEL-5]]. By providing this data at
- the request level, the server gains the ability to customize the response
- based on the user's preferences. Importantly, it does not grant the server
- access to any previously inaccessible information.
+The User Preference Media Features Client Hint header exposes data at the HTTP
+request level that is otherwise attainable and/or detectable using JavaScript
+and CSS as defined in [[!MEDIA-QUERIES-LEVEL-5]]. By providing this data at
+the request level, the server gains the ability to customize the response
+based on the user's preferences. Importantly, it does not grant the server
+access to any previously inaccessible information.
 
 <h2 id="security-considerations">Security Considerations</h2>
 
