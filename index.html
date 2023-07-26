@@ -6,7 +6,7 @@
   <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
   <meta content="Bikeshed version d29f71adb, updated Wed Jul 19 11:08:56 2023 -0700" name="generator">
   <link href="https://wicg.github.io/user-preference-media-features-headers/" rel="canonical">
-  <meta content="b136e69820b9457afd21a9977a36fb33ab16d0e6" name="document-revision">
+  <meta content="49d84ba0d025a4787b370be119d39708bc632698" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -684,7 +684,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">User Preference Media Features Client Hints Headers</h1>
-   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2023-07-25">25 July 2023</time></p>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types#CG-DRAFT">Draft Community Group Report</a>, <time class="dt-updated" datetime="2023-07-26">26 July 2023</time></p>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -740,8 +740,9 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
       <li><a href="#client-hints-token-definition"><span class="secno">3.1</span> <span class="content">Client hints token</span></a>
       <li><a href="#policy-controlled-features"><span class="secno">3.2</span> <span class="content">Policy-controlled features</span></a>
      </ol>
-    <li><a href="#security-considerations"><span class="secno">4</span> <span class="content">Security Considerations</span></a>
-    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">5</span> <span class="content">Acknowledgements</span></a>
+    <li><a href="#privacy-considerations"><span class="secno">4</span> <span class="content">Privacy Considerations</span></a>
+    <li><a href="#security-considerations"><span class="secno">5</span> <span class="content">Security Considerations</span></a>
+    <li><a href="#acknowledgements>Acknowledgements"><span class="secno">6</span> <span class="content">Acknowledgements</span></a>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
      <ol class="toc">
@@ -850,11 +851,18 @@ The ABNF syntax for this header header field is as follows:</p>
     <li data-md>
      <p><code><dfn data-dfn-type="dfn" data-export id="ch-prefers-color-scheme">ch-prefers-color-scheme<a class="self-link" href="#ch-prefers-color-scheme"></a></dfn></code> which has a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-permissions-policy/#policy-controlled-feature-default-allowlist" id="ref-for-policy-controlled-feature-default-allowlist④">default allowlist</a> of <code>'self'</code></p>
    </ul>
-   <h2 class="heading settled" data-level="4" id="security-considerations"><span class="secno">4. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
+   <h2 class="heading settled" data-level="4" id="privacy-considerations"><span class="secno">4. </span><span class="content">Privacy Considerations</span><a class="self-link" href="#privacy-considerations"></a></h2>
+   <p>The User Preference Media Features Client Hint header exposes data at the HTTP
+request level that is otherwise attainable and/or detectable using JavaScript
+and CSS as defined in <a data-link-type="biblio" href="#biblio-media-queries-level-5" title="Media Queries Level 5">[MEDIA-QUERIES-LEVEL-5]</a>. By providing this data at
+the request level, the server gains the ability to customize the response
+based on the user’s preferences. Importantly, it does not grant the server
+access to any previously inaccessible information.</p>
+   <h2 class="heading settled" data-level="5" id="security-considerations"><span class="secno">5. </span><span class="content">Security Considerations</span><a class="self-link" href="#security-considerations"></a></h2>
    <p>The User Preference Media Features Client Hint header will only be available to
 HTTPS secure contexts. Additionally, the Security Considerations of <a data-link-type="biblio" href="#biblio-client-hints" title="HTTP Client Hints">[CLIENT-HINTS]</a> and the Security Considerations of <a data-link-type="biblio" href="#biblio-draft-davidben-http-client-hint-reliability-02" title="Client Hint Reliability">[draft-davidben-http-client-hint-reliability-02]</a> likewise apply to this proposal.</p>
-   <h2 class="heading settled" data-level="5" id="acknowledgements>Acknowledgements"><span class="secno">5. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
-   <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his
+   <h2 class="heading settled" data-level="6" id="acknowledgements>Acknowledgements"><span class="secno">6. </span><span class="content">Acknowledgements</span><a class="self-link" href="#acknowledgements%3eAcknowledgements"></a></h2>
+   <p>Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> and <a href="https://github.com/miketaylr">Mike Taylor</a> for their
 technical input and suggestions that led to improvements to this specification.</p>
   </main>
   <div data-fill-with="conformance">
