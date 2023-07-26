@@ -198,6 +198,15 @@ This document extends the [=policy-controlled client hints features=] with the f
 - <code><dfn export>ch-prefers-forced-colors</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-prefers-color-scheme</dfn></code> which has a [=default allowlist=] of `'self'`
 
+<h2 id="privacy-considerations">Privacy Considerations</h2>
+
+The User Preference Media Features Client Hint header exposes data at the HTTP
+request level that is otherwise attainable and/or detectable using JavaScript
+and CSS as defined in [[!MEDIA-QUERIES-LEVEL-5]]. By providing this data at
+the request level, the server gains the ability to customize the response
+based on the user's preferences. Importantly, it does not grant the server
+access to any previously inaccessible information.
+
 <h2 id="security-considerations">Security Considerations</h2>
 
 The User Preference Media Features Client Hint header will only be available to
@@ -209,5 +218,6 @@ likewise apply to this proposal.
 <h2 id="acknowledgements>Acknowledgements">Acknowledgements</h2>
 <!-- ============================================================ -->
 
-Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> for his
+Special thanks to <a href="https://github.com/yoavweiss">Yoav Weiss</a> and
+<a href="https://github.com/miketaylr">Mike Taylor</a> for their
 technical input and suggestions that led to improvements to this specification.
