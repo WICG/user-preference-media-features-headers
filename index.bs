@@ -195,7 +195,7 @@ This document extends the [=policy-controlled client hints features=] with the f
 - <code><dfn export>ch-prefers-reduced-motion</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-prefers-reduced-transparency</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-prefers-contrast</dfn></code> which has a [=default allowlist=] of `'self'`
-- <code><dfn export>ch-prefers-forced-colors</dfn></code> which has a [=default allowlist=] of `'self'`
+- <code><dfn export>ch-forced-colors</dfn></code> which has a [=default allowlist=] of `'self'`
 - <code><dfn export>ch-prefers-color-scheme</dfn></code> which has a [=default allowlist=] of `'self'`
 
 <h2 id="privacy-considerations">Privacy Considerations</h2>
