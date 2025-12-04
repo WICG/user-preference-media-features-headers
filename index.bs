@@ -185,7 +185,7 @@ This document extends the [=client hints token=] with the following [=byte-lower
   <code>Sec-CH-Prefers-Reduced-Motion</code>,
   <code>Sec-CH-Prefers-Reduced-Transparency</code>,
   <code>Sec-CH-Prefers-Contrast</code>,
-  <code>Sec-CH-Prefers-Forced-Colors</code>,
+  <code>Sec-CH-Forced-Colors</code>,
   <code>Sec-CH-Prefers-Color-Scheme</code>.
 
 <h3 id="policy-controlled-features">Policy-controlled features</h3>
